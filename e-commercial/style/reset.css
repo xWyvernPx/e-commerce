@@ -25,8 +25,31 @@ html {
   }
   a {
     text-decoration: none;
+
   }
   img {
     display: block;
     max-width: 100%;
   }
+  button {
+    background-color: transparent;
+        outline: none;
+        border: none;
+}
+input {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    -webkit-appearance: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+a:visited {color: unset;}

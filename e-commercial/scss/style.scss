@@ -1,11 +1,22 @@
 @import './variables.scss';
-
+@import './mixin';
 html {
     font-family: $font-primary;
     font-size: 62.5%;
     color : $C1_A;
 }
-
+body{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    & {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    }
+    &::-webkit-scrollbar {
+     display: none;
+    }
+    height: 3000px;
+}
 .header{
     &__info {
         padding: 1.6rem 4.5rem;
@@ -39,7 +50,7 @@ html {
     &__main {
 
         padding:4rem 4.5rem;
-        
+        position: relative;
         display: flex;
         justify-content: space-between;
     }
@@ -133,7 +144,7 @@ html {
     }
 }
 .active{
-    visibility: visible;
+    visibility: visible !important;
     
 }
 .spin{ 
@@ -151,3 +162,574 @@ html {
     line-height: 1.9rem;
 }
 
+.checkout {
+    &__cart{
+        position: absolute;
+        background-color: $C1_J;
+        width: 40rem;
+        height: auto;
+        right:-110%;
+        top:0;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        transition: 0.3s ease-out;
+    }
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        padding : 2.4rem 1.6rem;
+        align-items: center;
+    }
+    &__title {
+        font-size: 2.6rem;
+        font-weight: 600;
+        line-height: 3.9rem ;
+        color: $C1_A;
+    }
+    &__list{
+        overflow-x: hidden;
+        overflow-y: scroll;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        height: 40rem;
+        padding : 0 1.6rem;
+        & {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        }
+        &::-webkit-scrollbar {
+        display: none;
+        }
+    }
+    &__total {
+        padding: 2.4rem 1.6rem;
+    }
+    &__total-title{
+        font-size: 1.2rem;
+        font-weight: 600;
+        line-height: 1.8rem;
+        font-family: $font-primary;
+    }
+    &__total-price {
+        display: flex;
+        border-bottom: 1px solid $C1_D;
+    }
+    &__total-number{ 
+        margin-right: .5rem;
+        font-size: 2.6rem;
+        font-weight: 600;
+        line-height: 3.9rem;
+    }
+    &__total-currency {
+        font-size: 2.6rem;
+        font-weight: 600;
+        line-height: 3.9rem;
+    }
+    &__selection {
+        display: flex;
+        padding:1.6rem;
+        justify-content: space-between;
+        align-items: center;
+
+        
+    }
+    &__continue{
+        color: $C1_A;
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+        font-weight: 700;
+    }
+    &__close {
+        cursor: pointer;
+    }
+    
+    &__checkout {
+        @include primaryButton (15rem,1.25rem);
+
+    }
+}
+.cartActive {
+    right:0;
+}
+
+.product {
+    margin-top: 2.4rem;
+    display: flex;
+    max-height: 15.4rem;
+    max-width: 36.7rem;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 1px solid $C1_D;
+
+    &:last-child{
+        border: none;
+    }
+    &__function {
+        display: flex;
+        flex-direction: column;
+        margin-right: 1.6rem;
+        flex-grow: 0;
+    }
+    &__wish,&__compare,&__remove {
+        display: flex;
+        align-items: center;
+        font-size: 1.2rem;
+        font-family: $font-secondary;
+        margin-bottom: 0.8rem;
+        img {
+            width: 1.2rem;
+            height: 1.2rem;
+            margin-right: 0.6rem;
+        }
+    }
+    &__img{
+        margin-bottom: 1.2rem;
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+    &__title {
+        color: $C1_A;
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 2.25rem;
+    }
+    &__info {
+        display: grid;
+        grid-template-columns: 0.8fr 1fr;
+        margin-top: 0.5rem;
+    }
+    &__farm,&__fresh {
+        color: $C1_C;
+        font-family: $font-secondary;
+        margin-bottom: 0.7rem;
+    }
+    &__farmname,&__freshness {
+        font-size: 1.2rem;
+        font-family: $font-secondary;
+
+    }
+    &__quantity{
+        display: flex;
+        justify-content: space-between;
+        padding: 1.6rem;
+        padding-left: 0;
+        width: 100%;
+    }
+    &__pricing {
+        width: 9.1rem;
+    }
+    &__newprice {
+        color: $C2_A;
+        font-size: 1.8rem;
+        line-height: 2.7rem;
+        font-weight: 600;
+    }
+    &__oldprice{ 
+        color: $C1_C;
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        font-weight: 600;
+        text-decoration: line-through;
+    }
+    &__amount {
+        display: flex;
+        width: 9.6rem;
+        height: 3.2rem;
+        background-color: $C1_H;
+        align-items: center;
+
+        border-radius: 1.2rem;
+        border: 1px solid $C1_D;
+    }
+    &__count {
+        display: block;
+        width: 50%;
+        padding: 0.6rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        text-align: center;
+        &::placeholder {
+            color : $C1_D;
+            font-weight: 400;
+        }   
+    }
+    &__unit{
+        color: $C1_A;
+        font-size: 1.2rem;
+        font-weight: 600;
+        font-family: $font_primary;
+        padding-left: 0.6rem;
+        border-left: 1px solid $C1_D;
+    }
+}
+.header__catalogue{
+    display: flex;
+    background-color: $C1_H;
+    padding-left: 2.9rem;
+   
+}
+
+.catalogue {
+    display: flex;
+    overflow-x: scroll;
+&__arrow {
+    transition: all 0.3s linear;
+}
+&__select{
+    // width: fit-content;
+    min-width: 12rem ;
+}
+&__select-field {
+    display: flex;
+    width: fit-content;
+    // justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 1rem 1.6rem;
+    & img{
+        display: block;
+        width: 1.6rem;
+        height: 1.6rem;
+    }
+}
+&__select-text{
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 2.25rem;
+}
+&__select-list {
+    list-style: none;
+    position: absolute;
+    width: 100%;
+    background-color: $C1_H;
+    left: 0;
+    visibility: collapse;
+    // margin-top: .4rem;
+    border-radius: 1.2rem;
+    border: $C1_D 1px solid;
+    transition: all 0.1s linear;
+    text-align: left;
+    z-index: 99;
+    
+}
+&__select-icon{
+    transition: all 0.4s linear;
+}
+&__select-option {
+    padding:1rem 2rem;font-size: 1.2rem;
+    border-radius: 1.2rem;
+    cursor: pointer;
+    &:hover {
+        background-color: $C1_E;
+    }
+}
+&__select {
+    position: relative;
+}}
+
+.feature {
+    display: flex;
+    padding : 6.4rem 4.45rem;
+    &__menu{}
+    &__menu-title {
+        font-size: $fs4;
+        line-height: $lh4;
+        font-weight: 600;
+        color: $C1_A;
+        padding-bottom: 1.6rem;
+    }
+    &__menu-list{
+        list-style: none;
+       
+    }
+    &__menu-option {
+        a {
+        color: $C2_A;
+        text-decoration: underline;
+        font-size: 1.4rem;
+        line-height: 1.9rem;
+    }
+    padding-top:1.2rem ;
+    }
+    &__menu-more{ 
+        @include secondaryButton (17.9rem ,1.25rem);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 4.8rem;
+        margin-right: 9rem;
+        img {
+            width: 1.6rem;
+            height: 1.6rem;
+        }
+    }
+    &__display {
+        display: flex;
+        justify-content: space-evenly;
+        overflow-x: scroll;
+        flex-grow: 1;
+        & {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        }
+        &::-webkit-scrollbar {
+         display: none;
+        }
+    }
+    &__item{
+        background-color: $C2_E;
+        background-image: url('/static/img/pattern.svg');
+        background-size: cover;
+        background-position: center;
+        max-width: 42rem;
+        padding-left: 3.3rem;
+        padding-top: 4.8rem;
+        border-radius: $radius;
+        margin-right: 3.1rem;
+        &:last-child {
+            margin-right: 0px;
+        }
+    }
+
+    &__subtitle {
+        
+        color: $C2_A;
+        font-size: $fs6;
+        line-height: $lh6;
+    }
+    &__title {
+        font-size: $fs3;
+        line-height: $lh3;
+        color: $C1_A;
+    }
+    &__more {
+        @include outlineButton (16.3rem, 1.2rem);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 9.4rem;
+        margin-bottom: 3.2rem;
+        margin-right: 22.4rem;
+        img{
+            width: 16px;
+            height: 16px;
+            margin-left: 1rem;
+        }
+    }
+    // box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-bottom: 1px solid $C1_D;
+}
+
+.best-selling {
+    display: flex;
+    padding : 6.4rem 4.45rem;
+    border: 1px solid $C1_D;
+    &__display {
+        display: flex;
+        justify-content: space-evenly;
+        flex: 1;
+    }
+}
+
+.product {
+    &__card {
+        padding: 1.6rem;
+        display: flex;
+        flex-direction: column;
+        // align-items: center;
+        border-radius: $radius;
+        border: 1px solid $C1_D;
+       width: max-content;
+    }
+    &__card-discount{
+        color: $C2_A;
+        background-color: $C2_E;
+        line-height: 1.8rem;
+        width: fit-content;
+        padding: 0 1rem;
+        border-radius: $radius;
+        position: absolute;
+        top: 1.2rem;
+        left: 1.2rem;
+    }
+    &__card-cover {
+        position: relative;
+    }
+    &__card-img {
+        margin-bottom: 1.6rem;
+        max-width: 23.7rem;
+        height: auto;
+    }
+    &__card-title {
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+        font-weight: 500;
+        margin-bottom: 0.4rem;
+        color: C1_A;
+    }
+    &__card-desc {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+        font-family: $font-secondary;
+        font-weight: 400;
+        color: $C1_B;
+    }
+    &__card-payment {
+        display: flex;
+        margin-top: 1.6rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__card-newprice {
+        font-size: $fs4;
+        line-height: $lh4;
+        font-weight: 600;
+        color: $C1_A;
+    }
+    &__card-oldprice {
+        font-size: $fs6;
+        line-height: $lh6;
+        font-weight: 600;
+        color: $C1_C;
+        text-decoration: line-through;
+    }
+    &__card-checkout {
+        @include primaryButton (9rem ,0.65rem);
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 2.25rem;
+    }
+
+}
+.best-farmer {
+    display: flex;
+    padding : 6.4rem 4.45rem;
+    border: 1px solid $C1_D;
+    &__display {
+        display: flex;
+        justify-content: space-evenly;
+        flex: 1;
+    }
+}
+.customer {
+    display: flex;
+    flex-direction: column;
+    padding: 3.2rem 0;
+    position: relative;
+    
+    &__header {
+        margin: 3.2rem 4.5rem;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__title {
+        font-size: $fs4;
+        line-height: $lh4;
+        font-weight: 600;
+        color: $C1_A;
+    }
+    &__more {
+        display: flex;
+        font-size: $fs5;
+        line-height: $lh5;
+        font-weight: 700;
+        align-items: center;
+        img {
+            padding : 0 1rem;
+        }
+    }
+    &__display {
+        display: flex;
+        justify-content: flex-start;
+        position: relative;
+        overflow-x: scroll;
+        overflow-y: visible;
+        height: 27rem;
+        & {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        }
+        &::-webkit-scrollbar {
+         display: none;
+        }
+    
+    }
+
+}
+.comment{
+    &__scroll--next , &__scroll--previous {
+        position: absolute;
+        background-color: $C1_A;
+        padding: 0.8rem 0 ;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 88;
+    }
+    &__scroll--previous {
+        left: 0;
+        border-radius: 0 $radius $radius 0;
+    }
+    &__scroll--next {
+        right: 0;
+        border-radius:  $radius 0 0 $radius ;
+    }
+    &__card {
+        max-width: 37rem;
+        min-width: 30rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2.4rem;
+        border: $C1_D 1px solid;
+        border-radius: $radius;
+        position: relative;
+        margin-right: 3.2rem;
+        &:last-child {
+            margin-right: 0;
+        }
+        &-content {
+            font-size: $fs5;
+            line-height:  $lh5;
+            font-weight: 500;
+            text-align: center;
+            padding:  0 0.8rem;
+            color : $C1_A
+        }
+        &-author {
+            font-size: $fs6;
+            line-height: $lh6;
+            font-weight: 600;
+            text-align: center;
+            color: $C1_C;
+            margin-top: 2.4rem;
+            margin-bottom: 4rem;
+        }
+        &-ava {
+            width: 4.8rem;
+            height: 4.8rem;
+            border-radius: $radius;
+            position: absolute;
+            bottom: 0;
+            transform: translateY(50%);
+        }
+    }
+    
+
+}
+.headline {
+    padding: 6.4rem 4.5rem;
+    width: 100%;
+}
+.headline__display {
+   &{
+       --columns: 5;
+       --gap: 3.2rem;
+       display: grid;
+       grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+       grid-gap: var(--gap);
+   }
+
+}

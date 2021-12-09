@@ -49,7 +49,7 @@
                         <li class="header__category-select--option">Baby</li>
                     </ul> 
                 </div>
-                <input type="text" name="search" id="header__search-bar" placeholder="Search Products, categories ...">
+                <input type="text" name="search" id="header__search-bar" placeholder="Search Products, categories ..."> 
                 <img src="/static/img/ic-actions-search.png" class="header__ic-search"alt=" " >
             </div>
 
@@ -63,21 +63,105 @@
             <div class="checkout__cart">
                 <div class="checkout__header">
                     <h2 class="checkout__title">Shopping cart</h2>
-                    <img src="/static/img/ic-actions-close-simple.svg" alt="" class="header__checkout-close">
+                    <img src="/static/img/ic-actions-close-simple.svg" alt="" class="checkout__close">
                 </div>
                 <div class="checkout__list">
-                    <div class="checkout__item">
-                        <div class="checkout__item-fucntion">
-                            <img src="" class="checkout__item-img" alt="">
-                            <button class="checkout__item-wish"></button>
+                    <div class="product">
+                        <div class="product__function ">
+                            <img src="/static/img/mockup item.png" class="product__img" alt="">
+                            <button class="product__wish"><img src="static/img/ic-actions-heart.png  " alt="">Wishlist</button>
+                            <button class="product__compare"><img src="static/img/ic-layout-picture-right.png" alt="">Compare</button>
+                            <button class="product__remove"><img src="static/img/ic-actions-close-simple.svg  " alt="">Remove</button>
+                        </div>
+                        <div class="product__content">
+                            <h5 class="product__title">Product title</h5>
+                            <div class="product__info">
+                                <label for="product__farmname" class="product__farm">Farm:</label>
+                                <h6 class="product__farmname">Tharamis Farm</h6>
+                                <label for="product__freshness" class="product__fresh">Freshness:</label>
+                                <h6 class="product__freshness">1 days ago</h6>
+                            </div>
+                            <div class="product__rating">
+                                
+                            </div>
+                            <div class="product__quantity">
+                                <div class="product__pricing">
+                                    <h4 class="product__newprice">36.99 USD</h4>
+                                    <h6 class="product__oldprice">48.56 USD</h6>
+                                </div>
+                                <div class="product__amount">
+                                    <input type="number" name="" id="" placeholder="1 pcs" class="product__count" >
+                                    <p class="product__unit">Pcs</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product__function ">
+                            <img src="/static/img/mockup item.png" class="product__img" alt="">
+                            <button class="product__wish"><img src="static/img/ic-actions-heart.png  " alt="">Wishlist</button>
+                            <button class="product__compare"><img src="static/img/ic-layout-picture-right.png" alt="">Compare</button>
+                            <button class="product__remove"><img src="static/img/ic-actions-close-simple.svg  " alt="">Remove</button>
+                        </div>
+                        <div class="product__content">
+                            <h5 class="product__title">Product title</h5>
+                            <div class="product__info">
+                                <label for="product__farmname" class="product__farm">Farm:</label>
+                                <h6 class="product__farmname">Tharamis Farm</h6>
+                                <label for="product__freshness" class="product__fresh">Freshness:</label>
+                                <h6 class="product__freshness">1 days ago</h6>
+                            </div>
+                            <div class="product__rating">
+                                
+                            </div>
+                            <div class="product__quantity">
+                                <div class="product__pricing">
+                                    <h4 class="product__newprice">36.99 USD</h4>
+                                    <h6 class="product__oldprice">48.56 USD</h6>
+                                </div>
+                                <div class="product__amount">
+                                    <input type="number" name="" id="" placeholder="1 pcs" class="product__count" >
+                                    <p class="product__unit">Pcs</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product__function ">
+                            <img src="/static/img/mockup item.png" class="product__img" alt="">
+                            <button class="product__wish"><img src="static/img/ic-actions-heart.png  " alt="">Wishlist</button>
+                            <button class="product__compare"><img src="static/img/ic-layout-picture-right.png" alt="">Compare</button>
+                            <button class="product__remove"><img src="static/img/ic-actions-close-simple.svg  " alt="">Remove</button>
+                        </div>
+                        <div class="product__content">
+                            <h5 class="product__title">Product title</h5>
+                            <div class="product__info">
+                                <label for="product__farmname" class="product__farm">Farm:</label>
+                                <h6 class="product__farmname">Tharamis Farm</h6>
+                                <label for="product__freshness" class="product__fresh">Freshness:</label>
+                                <h6 class="product__freshness">1 days ago</h6>
+                            </div>
+                            <div class="product__rating">
+                                
+                            </div>
+                            <div class="product__quantity">
+                                <div class="product__pricing">
+                                    <h4 class="product__newprice">36.99 USD</h4>
+                                    <h6 class="product__oldprice">48.56 USD</h6>
+                                </div>
+                                <div class="product__amount">
+                                    <input type="number" name="" id="" placeholder="1 pcs" class="product__count" >
+                                    <p class="product__unit">Pcs</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="checkout__total">
                     <h6 class="checkout__total-title">Subtotal</h6>
                     <div class="checkout__total-price">
-                        <h2 class="checkout__total-number">73.98</h2>
-                        <h2 class="checkout__total-currency">USD</h2>
+                        <h2 class="checkout__total-number">73.98 </h2>
+                        <h2 class="checkout__total-currency"> USD</h2>
                     </div>
                 </div>
                 <div class="checkout__selection">
@@ -86,8 +170,479 @@
                 </div>
             </div>
         </div>
+        <!-- bottom header  -->
+        <section class="header__catalogue">
+                <button class="catalogue__select ">
+                    <div class="catalogue__select-field">
+                        <p class="catalogue__select-text ">Bakery</p>
+                        <img src="/static/img/ic-chevron-down.svg" alt="" class="catalogue__arrow catalogue--bakery">
+                    </div>
+                    <ul class="catalogue__select-list catalogue--bakery">
+                        <li class="catalogue__select-option"><a href="">Pancake</a></li>
+                        <li class="catalogue__select-option"><a href="">Muffins</a></li>
+                        <li class="catalogue__select-option"><a href="">Scones</a></li>
+                        <li class="catalogue__select-option"><a href="">Bread</a></li>
+                        <li class="catalogue__select-option"><a href="">Bagel</a></li>
+                        <li class="catalogue__select-option"><a href="">Pizza</a></li>
+                        <li class="catalogue__select-option"><a href="">Cookie</a></li>
+                    </ul>
+                </button>
+                <button class="catalogue__select ">
+                    <div class="catalogue__select-field">
+                        <p class="catalogue__select-text ">Fruits and Vegetable</p>
+                        <img src="/static/img/ic-chevron-down.svg" alt="" class="catalogue__arrow catalogue--fruit">
+                    </div>
+                    <ul class="catalogue__select-list catalogue--fruit">
+                        <li class="catalogue__select-option"><a href="">Pancake</a></li>
+                        <li class="catalogue__select-option"><a href="">Muffins</a></li>
+                        <li class="catalogue__select-option"><a href="">Scones</a></li>
+                        <li class="catalogue__select-option"><a href="">Bread</a></li>
+                        <li class="catalogue__select-option"><a href="">Bagel</a></li>
+                        <li class="catalogue__select-option"><a href="">Pizza</a></li>
+                        <li class="catalogue__select-option"><a href="">Cookie</a></li>
+                    </ul>
+                </button>
+                <button class="catalogue__select ">
+                    <div class="catalogue__select-field">
+                        <p class="catalogue__select-text ">Meet and Fish</p>
+                        <img src="/static/img/ic-chevron-down.svg" alt="" class="catalogue__arrow catalogue--meet">
+                    </div>
+                    <ul class="catalogue__select-list catalogue--meet">
+                        <li class="catalogue__select-option"><a href="">Pancake</a></li>
+                        <li class="catalogue__select-option"><a href="">Muffins</a></li>
+                        <li class="catalogue__select-option"><a href="">Scones</a></li>
+                        <li class="catalogue__select-option"><a href="">Bread</a></li>
+                        <li class="catalogue__select-option"><a href="">Bagel</a></li>
+                        <li class="catalogue__select-option"><a href="">Pizza</a></li>
+                        <li class="catalogue__select-option"><a href="">Cookie</a></li>
+                    </ul>
+                </button>
+                <button class="catalogue__select ">
+                    <div class="catalogue__select-field">
+                        <p class="catalogue__select-text ">Drinks</p>
+                        <img src="/static/img/ic-chevron-down.svg" alt="" class="catalogue__arrow catalogue--drink">
+                    </div>
+                    <ul class="catalogue__select-list catalogue--drink">
+                        <li class="catalogue__select-option"><a href="">Pancake</a></li>
+                        <li class="catalogue__select-option"><a href="">Muffins</a></li>
+                        <li class="catalogue__select-option"><a href="">Scones</a></li>
+                        <li class="catalogue__select-option"><a href="">Bread</a></li>
+                        <li class="catalogue__select-option"><a href="">Bagel</a></li>
+                        <li class="catalogue__select-option"><a href="">Pizza</a></li>
+                        <li class="catalogue__select-option"><a href="">Cookie</a></li>
+                    </ul>
+                </button>
+                <button class="catalogue__select ">
+                    <div class="catalogue__select-field">
+                        <p class="catalogue__select-text ">Kitchen</p>
+                        <img src="/static/img/ic-chevron-down.svg" alt="" class="catalogue__arrow catalogue--kitchen">
+                    </div>
+                    <ul class="catalogue__select-list catalogue--kitchen">
+                        <li class="catalogue__select-option"><a href="">Pancake</a></li>
+                        <li class="catalogue__select-option"><a href="">Muffins</a></li>
+                        <li class="catalogue__select-option"><a href="">Scones</a></li>
+                        <li class="catalogue__select-option"><a href="">Bread</a></li>
+                        <li class="catalogue__select-option"><a href="">Bagel</a></li>
+                        <li class="catalogue__select-option"><a href="">Pizza</a></li>
+                        <li class="catalogue__select-option"><a href="">Cookie</a></li>
+                    </ul>
+                </button>
+                <button class="catalogue__select ">
+                    <div class="catalogue__select-field">
+                        <p class="catalogue__select-text ">Special Nutrition</p>
+                        <img src="/static/img/ic-chevron-down.svg" alt="" class="catalogue__arrow catalogue--nutrition">
+                    </div>
+                    <ul class="catalogue__select-list catalogue--nutrition">
+                        <li class="catalogue__select-option"><a href="">Pancake</a></li>
+                        <li class="catalogue__select-option"><a href="">Muffins</a></li>
+                        <li class="catalogue__select-option"><a href="">Scones</a></li>
+                        <li class="catalogue__select-option"><a href="">Bread</a></li>
+                        <li class="catalogue__select-option"><a href="">Bagel</a></li>
+                        <li class="catalogue__select-option"><a href="">Pizza</a></li>
+                        <li class="catalogue__select-option"><a href="">Cookie</a></li>
+                    </ul>
+                </button>
+                <button class="catalogue__select ">
+                    <div class="catalogue__select-field">
+                        <p class="catalogue__select-text ">Baby</p>
+                        <img src="/static/img/ic-chevron-down.svg" alt="" class="catalogue__arrow catalogue--baby">
+                    </div>
+                    <ul class="catalogue__select-list catalogue--baby">
+                        <li class="catalogue__select-option"><a href="">Pancake</a></li>
+                        <li class="catalogue__select-option"><a href="">Muffins</a></li>
+                        <li class="catalogue__select-option"><a href="">Scones</a></li>
+                        <li class="catalogue__select-option"><a href="">Bread</a></li>
+                        <li class="catalogue__select-option"><a href="">Bagel</a></li>
+                        <li class="catalogue__select-option"><a href="">Pizza</a></li>
+                        <li class="catalogue__select-option"><a href="">Cookie</a></li>
+                    </ul>
+                </button>
+                <button class="catalogue__select ">
+                    <div class="catalogue__select-field">
+                        <p class="catalogue__select-text ">Pharmacy</p>
+                        <img src="/static/img/ic-chevron-down.svg" alt="" class="catalogue__arrow catalogue--pharmacy">
+                    </div>
+                    <ul class="catalogue__select-list catalogue--pharmacy">
+                        <li class="catalogue__select-option"><a href="">Pancake</a></li>
+                        <li class="catalogue__select-option"><a href="">Muffins</a></li>
+                        <li class="catalogue__select-option"><a href="">Scones</a></li>
+                        <li class="catalogue__select-option"><a href="">Bread</a></li>
+                        <li class="catalogue__select-option"><a href="">Bagel</a></li>
+                        <li class="catalogue__select-option"><a href="">Pizza</a></li>
+                        <li class="catalogue__select-option"><a href="">Cookie</a></li>
+                    </ul>
+                </button>
+              
+        </section>
     </header> 
     <!-- End  Header section  -->
+
+    <!-- feature section  -->
+    <section class="feature">
+        <div class="feature__menu">
+            <h4 class="feature__menu-title">Category menu</h4>
+            <ul class="feature__menu-list">
+                <li class="feature__menu-option"><a href="#!">Bakery</a></li>
+                <li class="feature__menu-option"><a href="#!">Fruits and Vegetable</a></li>
+                <li class="feature__menu-option"><a href="#!">Meat and Fish</a></li>
+                <li class="feature__menu-option"><a href="#!">Drinks</a></li>
+                <li class="feature__menu-option"><a href="#!">Kitchen</a></li>
+            </ul>
+            <a href="#!" class="feature__menu-more">More categories <img src="/static/img/ic-chevron-right-black.png" alt=""></a>
+        </div>
+        <div class="feature__display">
+            <article class="feature__item">
+                <h6 class="feature__subtitle">Banner subfocus</h6>
+                <h3 class="feature__title">Space for heading</h3>
+                <button class="feature__more">
+                    Read recepies 
+                    <img src="/static/img/ic-chevron-right.svg" alt="" class="feature__arrow">
+                </button>
+            </article>
+            <article class="feature__item">
+                <h6 class="feature__subtitle">Banner subfocus</h6>
+                <h3 class="feature__title">Space for heading</h3>
+                <button class="feature__more">
+                    Read recepies 
+                    <img src="/static/img/ic-chevron-right.svg" alt="" class="feature__arrow">
+                </button>
+            </article>
+        </div>
+    </section>
+    <!-- end feature section  -->
+    <!-- best selling section  -->
+    <section class="best-selling">
+        <div class="feature__menu">
+            <h4 class="feature__menu-title">Best selling Products</h4>
+            <ul class="feature__menu-list">
+                <li class="feature__menu-option"><a href="#!">Kitchen</a></li>
+                <li class="feature__menu-option"><a href="#!">Meat and Fish</a></li>
+                <li class="feature__menu-option"><a href="#!">Special Nutrition</a></li>
+                <li class="feature__menu-option"><a href="#!">Pharmacy</a></li>
+                <li class="feature__menu-option"><a href="#!">Baby</a></li>
+            </ul>
+            <a href="#!" class="feature__menu-more">More products <img src="/static/img/ic-chevron-right-black.png" alt=""></a>
+        </div>
+        <div class="best-selling__display">
+            <div class="product__card">
+                <div class="product__card-cover">
+                    <img src="/static/img/mockup product M.png" alt="" class="product__card-img">
+                    <p class="product__card-discount">- 36 $</p>
+                </div>
+                <h5 class="product__card-title">Product title</h5>
+                <h6 class="product__card-desc">Space for a small product description </h6>
+                <div class="product__card-payment">
+                    <div class="product__card-price">
+                        <h4 class="product__card-newprice">1.48 USD</h4>
+                        <h5 class="product__card-oldprice">4.48 USD</h5>
+                    </div>
+                    <a href="#!" class="product__card-checkout">Buy Now</a>
+                </div>
+            </div>
+            <div class="product__card">
+                <div class="product__card-cover">
+                    <img src="/static/img/mockup product M.png" alt="" class="product__card-img">
+                    <p class="product__card-discount">- 36 $</p>
+                </div>
+                <h5 class="product__card-title">Product title</h5>
+                <h6 class="product__card-desc">Space for a small product description </h6>
+                <div class="product__card-payment">
+                    <div class="product__card-price">
+                        <h4 class="product__card-newprice">1.48 USD</h4>
+                        <h5 class="product__card-oldprice">4.48 USD</h5>
+                    </div>
+                    <a href="#!" class="product__card-checkout">Buy Now</a>
+                </div>
+            </div>
+            <div class="product__card">
+                <div class="product__card-cover">
+                    <img src="/static/img/mockup product M.png" alt="" class="product__card-img">
+                    <p class="product__card-discount">- 36 $</p>
+                </div>
+                <h5 class="product__card-title">Product title</h5>
+                <h6 class="product__card-desc">Space for a small product description </h6>
+                <div class="product__card-payment">
+                    <div class="product__card-price">
+                        <h4 class="product__card-newprice">1.48 USD</h4>
+                        <h5 class="product__card-oldprice">4.48 USD</h5>
+                    </div>
+                    <a href="#!" class="product__card-checkout">Buy Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end best selling section  -->
+    <!-- best farmer section  -->
+    <section class="best-farmer">
+        <div class="feature__menu">
+            <h4 class="feature__menu-title">Best from Farmers</h4>
+            <ul class="feature__menu-list">
+                <li class="feature__menu-option"><a href="#!">Kitchen</a></li>
+                <li class="feature__menu-option"><a href="#!">Meat and Fish</a></li>
+                <li class="feature__menu-option"><a href="#!">Special Nutrition</a></li>
+                <li class="feature__menu-option"><a href="#!">Pharmacy</a></li>
+                <li class="feature__menu-option"><a href="#!">Baby</a></li>
+            </ul>
+            <a href="#!" class="feature__menu-more">More products <img src="/static/img/ic-chevron-right-black.png" alt=""></a>
+        </div>
+        <div class="best-farmer__display">
+            <div class="product__card">
+                <div class="product__card-cover">
+                    <img src="/static/img/mockup product M.png" alt="" class="product__card-img">
+                    <p class="product__card-discount">- 36 $</p>
+                </div>
+                <h5 class="product__card-title">Product title</h5>
+                <h6 class="product__card-desc">Space for a small product description </h6>
+                <div class="product__card-payment">
+                    <div class="product__card-price">
+                        <h4 class="product__card-newprice">1.48 USD</h4>
+                        <h5 class="product__card-oldprice">4.48 USD</h5>
+                    </div>
+                    <a href="#!" class="product__card-checkout">Buy Now</a>
+                </div>
+            </div>
+            <div class="product__card">
+                <div class="product__card-cover">
+                    <img src="/static/img/mockup product M.png" alt="" class="product__card-img">
+                    <p class="product__card-discount">- 36 $</p>
+                </div>
+                <h5 class="product__card-title">Product title</h5>
+                <h6 class="product__card-desc">Space for a small product description </h6>
+                <div class="product__card-payment">
+                    <div class="product__card-price">
+                        <h4 class="product__card-newprice">1.48 USD</h4>
+                        <h5 class="product__card-oldprice">4.48 USD</h5>
+                    </div>
+                    <a href="#!" class="product__card-checkout">Buy Now</a>
+                </div>
+            </div>
+            <div class="product__card">
+                <div class="product__card-cover">
+                    <img src="/static/img/mockup product M.png" alt="" class="product__card-img">
+                    <p class="product__card-discount">- 36 $</p>
+                </div>
+                <h5 class="product__card-title">Product title</h5>
+                <h6 class="product__card-desc">Space for a small product description </h6>
+                <div class="product__card-payment">
+                    <div class="product__card-price">
+                        <h4 class="product__card-newprice">1.48 USD</h4>
+                        <h5 class="product__card-oldprice">4.48 USD</h5>
+                    </div>
+                    <a href="#!" class="product__card-checkout">Buy Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end best selling section  -->
+    <!-- customer section  -->
+        <section class="customer">
+            <div class="customer__header">
+                <h4 class="customer__title">Our customers say</h4>
+                <button class="customer__more">More <img src="/static/img/ic-chevron-right.svg" alt=""></button>
+            </div>
+            <button class="comment__scroll--previous" type="button"><img src="/static/img/ic-chevron-left-white.png" alt=""></button>
+            <button class="comment__scroll--next" type="button"><img src="/static/img/ic-chevron-right-white.png" alt=""></button>
+            <div class="customer__display">
+
+                <div class="comment__card">
+                    <p class="comment__card-content">
+                        “ This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here “
+                    </p>
+                    <h6 class="comment__card-author">Name and Surname</h6>
+                    <!-- <img src="/static/img/mockup ava round.png" alt="" class="comment__card-ava"> -->
+                </div>
+                <div class="comment__card">
+                    <p class="comment__card-content">
+                        “ This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here “
+                    </p>
+                    <h6 class="comment__card-author">Name and Surname</h6>
+                    <!-- <img src="/static/img/mockup ava round.png" alt="" class="comment__card-ava"> -->
+                </div>
+                <div class="comment__card">
+                    <p class="comment__card-content">
+                        “ This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here “
+                    </p>
+                    <h6 class="comment__card-author">Name and Surname</h6>
+                    <!-- <img src="/static/img/mockup ava round.png" alt="" class="comment__card-ava"> -->
+                </div>
+                <div class="comment__card">
+                    <p class="comment__card-content">
+                        “ This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here “
+                    </p>
+                    <h6 class="comment__card-author">Name and Surname</h6>
+                    <!-- <img src="/static/img/mockup ava round.png" alt="" class="comment__card-ava"> -->
+                </div>
+                <div class="comment__card">
+                    <p class="comment__card-content">
+                        “ This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here “
+                    </p>
+                    <h6 class="comment__card-author">Name and Surname</h6>
+                    <!-- <img src="/static/img/mockup ava round.png" alt="" class="comment__card-ava"> -->
+                </div>
+                <div class="comment__card">
+                    <p class="comment__card-content">
+                        “ This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here “
+                    </p>
+                    <h6 class="comment__card-author">Name and Surname</h6>
+                    <!-- <img src="/static/img/mockup ava round.png" alt="" class="comment__card-ava"> -->
+                </div>
+                <div class="comment__card">
+                    <p class="comment__card-content">
+                        “ This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here “
+                    </p>
+                    <h6 class="comment__card-author">Name and Surname</h6>
+                    <!-- <img src="/static/img/mockup ava round.png" alt="" class="comment__card-ava"> -->
+                </div>
+                <div class="comment__card">
+                    <p class="comment__card-content">
+                        “ This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here “
+                    </p>
+                    <h6 class="comment__card-author">Name and Surname</h6>
+                    <!-- <img src="/static/img/mockup ava round.png" alt="" class="comment__card-ava"> -->
+                </div>
+                <div class="comment__card">
+                    <p class="comment__card-content">
+                        “ This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here “
+                    </p>
+                    <h6 class="comment__card-author">Name and Surname</h6>
+                    <!-- <img src="/static/img/mockup ava round.png" alt="" class="comment__card-ava"> -->
+                </div>
+                <div class="comment__card">
+                    <p class="comment__card-content">
+                        “ This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here “
+                    </p>
+                    <h6 class="comment__card-author">Name and Surname</h6>
+                    <!-- <img src="/static/img/mockup ava round.png" alt="" class="comment__card-ava"> -->
+                </div>
+            </div>
+        </section>
+    <!-- end customer section  -->
+        <!-- headline section  -->
+        <section class="headline"> 
+            <div class="customer__header">
+                <h4 class="customer__title">Section headline</h4>
+                <button class="customer__more">Button <img src="/static/img/ic-chevron-right.svg" alt=""></button>
+            </div>
+            <div class="headline__display">
+                <div class="product__card">
+                    <div class="product__card-cover">
+                        <img src="/static/img/mockup product M.png" alt="" class="product__card-img">
+                        <p class="product__card-discount">- 36 $</p>
+                    </div>
+                    <h5 class="product__card-title">Product title</h5>
+                    <h6 class="product__card-desc">Space for a small product description </h6>
+                    <div class="product__card-payment">
+                        <div class="product__card-price">
+                            <h4 class="product__card-newprice">1.48 USD</h4>
+                            <h5 class="product__card-oldprice">4.48 USD</h5>
+                        </div>
+                        <a href="#!" class="product__card-checkout">Buy Now</a>
+                    </div>
+                </div>
+                <div class="product__card">
+                    <div class="product__card-cover">
+                        <img src="/static/img/mockup product M.png" alt="" class="product__card-img">
+                        <p class="product__card-discount">- 36 $</p>
+                    </div>
+                    <h5 class="product__card-title">Product title</h5>
+                    <h6 class="product__card-desc">Space for a small product description </h6>
+                    <div class="product__card-payment">
+                        <div class="product__card-price">
+                            <h4 class="product__card-newprice">1.48 USD</h4>
+                            <h5 class="product__card-oldprice">4.48 USD</h5>
+                        </div>
+                        <a href="#!" class="product__card-checkout">Buy Now</a>
+                    </div>
+                </div>
+                <div class="product__card">
+                    <div class="product__card-cover">
+                        <img src="/static/img/mockup product M.png" alt="" class="product__card-img">
+                        <p class="product__card-discount">- 36 $</p>
+                    </div>
+                    <h5 class="product__card-title">Product title</h5>
+                    <h6 class="product__card-desc">Space for a small product description </h6>
+                    <div class="product__card-payment">
+                        <div class="product__card-price">
+                            <h4 class="product__card-newprice">1.48 USD</h4>
+                            <h5 class="product__card-oldprice">4.48 USD</h5>
+                        </div>
+                        <a href="#!" class="product__card-checkout">Buy Now</a>
+                    </div>
+                </div>
+                <div class="product__card">
+                    <div class="product__card-cover">
+                        <img src="/static/img/mockup product M.png" alt="" class="product__card-img">
+                        <p class="product__card-discount">- 36 $</p>
+                    </div>
+                    <h5 class="product__card-title">Product title</h5>
+                    <h6 class="product__card-desc">Space for a small product description </h6>
+                    <div class="product__card-payment">
+                        <div class="product__card-price">
+                            <h4 class="product__card-newprice">1.48 USD</h4>
+                            <h5 class="product__card-oldprice">4.48 USD</h5>
+                        </div>
+                        <a href="#!" class="product__card-checkout">Buy Now</a>
+                    </div>
+                </div>
+                <div class="product__card">
+                    <div class="product__card-cover">
+                        <img src="/static/img/mockup product M.png" alt="" class="product__card-img">
+                        <p class="product__card-discount">- 36 $</p>
+                    </div>
+                    <h5 class="product__card-title">Product title</h5>
+                    <h6 class="product__card-desc">Space for a small product description </h6>
+                    <div class="product__card-payment">
+                        <div class="product__card-price">
+                            <h4 class="product__card-newprice">1.48 USD</h4>
+                            <h5 class="product__card-oldprice">4.48 USD</h5>
+                        </div>
+                        <a href="#!" class="product__card-checkout">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end headline section  -->
+
+        <!-- blog section  -->
+        <section class="blog">
+            <div class="customer__header">
+                <h4 class="customer__title">Reading our blogs</h4>
+                <button class="customer__more">Go to blog <img src="/static/img/ic-chevron-right.svg" alt=""></button>
+            </div>
+            <div class="blog__display">
+                <div class="blog__cover">
+                    <img src="" alt="" class="blog__cover-img">
+                    <div class="blog__cover-content">
+                        <h3 class="blog__cover-title">Our chef tips for a great and tasty dinner ready in 20 minutes</h3>
+                        <div class="blog__cover-author">
+                            <img src="/static/img/auhtorava.png" alt="" class="blog__cover-authorava">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end blog section  -->
+    <!-- node-sass -w ./scss -o ./style -->
     <script src="/script/index.js"></script>
 </body>
 </html>
