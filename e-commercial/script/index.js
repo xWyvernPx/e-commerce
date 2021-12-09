@@ -4,6 +4,10 @@ select.onclick = (e) => {
     document.querySelector(".header__category-select--list").classList.toggle("active");
     document.querySelector(".header__category-select--icon").classList.toggle("spin");
 }
+window.onscroll = ()=>{
+    document.querySelector(".header__category-select--list").classList.remove("active");
+    document.querySelector(".header__category-select--icon").classList.remove("spin");
+}
 const selectText = document.querySelector(".header__category-select--text");
 document.querySelectorAll(".header__category-select--option").forEach(ele => ele.onclick = () => {
     selectText.innerText = ele.innerText;
@@ -47,4 +51,13 @@ prevCmtBtn.addEventListener("click", (e)=>{
 })
 nextCmtBtn.addEventListener("click", (e)=>{
     console.log(e.target)
+})
+const tags = ["Beans" , "Carrot" , "Apples","Garlic","Mushrooms", "Tomatoes","Chilli peppers","Broccoli", "Watermelons","Oranges","Bananas", "Grapes","Cherries","Meat", "Seo tag","Fish","Seo tag", "Fresh food","Lemons"];
+const tagList = document.querySelector (".footer__tag-list");
+tags.forEach(ele => {
+    const tag = document.createElement("a");
+    tag.classList.add("footer__tag-item");
+    tag.innerHTML = ele;
+    tagList.appendChild(tag);
+
 })
