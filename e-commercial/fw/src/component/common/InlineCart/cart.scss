@@ -1,0 +1,205 @@
+@import '../../../scss/variables.scss';
+@import '../../../scss/mixin.scss';
+
+.checkout {
+    &__cart{
+        position: absolute;
+        background-color: $C1_J;
+        width: 40rem;
+        height: auto;
+        right:-110%;
+        top:0;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        transition: 0.3s ease-out;
+    }
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        padding : 2.4rem 1.6rem;
+        align-items: center;
+    }
+    &__title {
+        font-size: 2.6rem;
+        font-weight: 600;
+        line-height: 3.9rem ;
+        color: $C1_A;
+    }
+    &__list{
+        overflow-x: hidden;
+        overflow-y: scroll;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        height: 40rem;
+        padding : 0 1.6rem;
+        & {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        }
+        &::-webkit-scrollbar {
+        display: none;
+        }
+    }
+    &__total {
+        padding: 2.4rem 1.6rem;
+    }
+    &__total-title{
+        font-size: 1.2rem;
+        font-weight: 600;
+        line-height: 1.8rem;
+        font-family: $font-primary;
+    }
+    &__total-price {
+        display: flex;
+        border-bottom: 1px solid $C1_D;
+    }
+    &__total-number{ 
+        margin-right: .5rem;
+        font-size: 2.6rem;
+        font-weight: 600;
+        line-height: 3.9rem;
+    }
+    &__total-currency {
+        font-size: 2.6rem;
+        font-weight: 600;
+        line-height: 3.9rem;
+    }
+    &__selection {
+        display: flex;
+        padding:1.6rem;
+        justify-content: space-between;
+        align-items: center;
+
+        
+    }
+    &__continue{
+        color: $C1_A;
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+        font-weight: 700;
+    }
+    &__close {
+        cursor: pointer;
+    }
+    
+    &__checkout {
+        @include primaryButton (15rem,1.25rem);
+
+    }
+}
+.cartActive {
+    right:0;
+}
+.product {
+    margin-top: 2.4rem;
+    display: flex;
+    max-height: 15.4rem;
+    max-width: 36.7rem;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 1px solid $C1_D;
+
+    &:last-child{
+        border: none;
+    }
+    &__function {
+        display: flex;
+        flex-direction: column;
+        margin-right: 1.6rem;
+        flex-grow: 0;
+    }
+    &__wish,&__compare,&__remove {
+        display: flex;
+        align-items: center;
+        font-size: 1.2rem;
+        font-family: $font-secondary;
+        margin-bottom: 0.8rem;
+        img {
+            width: 1.2rem;
+            height: 1.2rem;
+            margin-right: 0.6rem;
+        }
+    }
+    &__img{
+        margin-bottom: 1.2rem;
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+    &__title {
+        color: $C1_A;
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 2.25rem;
+    }
+    &__info {
+        display: grid;
+        grid-template-columns: 0.8fr 1fr;
+        margin-top: 0.5rem;
+    }
+    &__farm,&__fresh {
+        color: $C1_C;
+        font-family: $font-secondary;
+        margin-bottom: 0.7rem;
+    }
+    &__farmname,&__freshness {
+        font-size: 1.2rem;
+        font-family: $font-secondary;
+
+    }
+    &__quantity{
+        display: flex;
+        justify-content: space-between;
+        padding: 1.6rem;
+        padding-left: 0;
+        width: 100%;
+    }
+    &__pricing {
+        width: 9.1rem;
+    }
+    &__newprice {
+        color: $C2_A;
+        font-size: 1.8rem;
+        line-height: 2.7rem;
+        font-weight: 600;
+    }
+    &__oldprice{ 
+        color: $C1_C;
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        font-weight: 600;
+        text-decoration: line-through;
+    }
+    &__amount {
+        display: flex;
+        width: 9.6rem;
+        height: 3.2rem;
+        background-color: $C1_H;
+        align-items: center;
+
+        border-radius: 1.2rem;
+        border: 1px solid $C1_D;
+    }
+    &__count {
+        display: block;
+        width: 50%;
+        padding: 0.6rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        text-align: center;
+        &::placeholder {
+            color : $C1_D;
+            font-weight: 400;
+        }   
+    }
+    &__unit{
+        color: $C1_A;
+        font-size: 1.2rem;
+        font-weight: 600;
+        font-family: $font_primary;
+        padding-left: 0.6rem;
+        border-left: 1px solid $C1_D;
+    }
+}

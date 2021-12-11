@@ -8,16 +8,21 @@ window.onscroll = ()=>{
     document.querySelector(".header__category-select--list").classList.remove("active");
     document.querySelector(".header__category-select--icon").classList.remove("spin");
 }
+
+
 const selectText = document.querySelector(".header__category-select--text");
 document.querySelectorAll(".header__category-select--option").forEach(ele => ele.onclick = () => {
     selectText.innerText = ele.innerText;
 })
+
 document.querySelector(".checkout__close").onclick = ()=> {
     document.querySelector(".checkout__cart").classList.toggle("cartActive");
 }
 document.querySelector(".header__cart").onclick = () => {
     document.querySelector(".checkout__cart").classList.toggle("cartActive");
 }
+
+
 const catalogue = ["bakery","fruit","meet","drink","kitchen","nutrition","baby","pharmacy"];
 const select2 = document.querySelectorAll(".catalogue__select");
 select2.forEach((ele,index) => ele.onclick = (e) => {
