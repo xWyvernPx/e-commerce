@@ -1,0 +1,74 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixin.scss";
+
+.product {
+    &__card {
+        padding: 1.6rem;
+        display: flex;
+        flex-direction: column;
+        // align-items: center;
+        border-radius: $radius;
+        border: 1px solid $C1_D;
+       width: max-content;
+       margin: 0 1.6rem;
+    }
+    &__card-discount{
+        color: $C2_A;
+        background-color: $C2_E;
+        line-height: 1.8rem;
+        width: fit-content;
+        padding: 0 1rem;
+        border-radius: $radius;
+        position: absolute;
+        top: 1.2rem;
+        left: 1.2rem;
+    }
+    &__card-cover {
+        position: relative;
+    }
+    &__card-img {
+        margin-bottom: 1.6rem;
+        max-width: 23.7rem;
+        height: auto;
+    }
+    &__card-title {
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+        font-weight: 500;
+        margin-bottom: 0.4rem;
+        color: C1_A;
+    }
+    &__card-desc {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+        font-family: $font-secondary;
+        font-weight: 400;
+        color: $C1_B;
+    }
+    &__card-payment {
+        display: flex;
+        margin-top: 1.6rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__card-newprice {
+        font-size: $fs4;
+        line-height: $lh4;
+        font-weight: 600;
+        color: $C1_A;
+    }
+    &__card-oldprice {
+        font-size: $fs6;
+        line-height: $lh6;
+        font-weight: 600;
+        color: $C1_C;
+        text-decoration: line-through;
+    }
+    &__card-checkout {
+        @include primaryButton (9rem ,0.65rem);
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 2.25rem;
+    }
+
+}

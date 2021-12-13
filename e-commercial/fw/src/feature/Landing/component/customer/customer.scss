@@ -1,0 +1,107 @@
+@import "../../../../scss/variables.scss";
+@import "../../../../scss/mixin.scss";
+.customer {
+    display: flex;
+    flex-direction: column;
+    padding: 3.2rem 0;
+    position: relative;
+    
+    &__header {
+        margin: 3.2rem 4.5rem;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__title {
+        font-size: $fs4;
+        line-height: $lh4;
+        font-weight: 600;
+        color: $C1_A;
+    }
+    &__more {
+        display: flex;
+        font-size: $fs5;
+        line-height: $lh5;
+        font-weight: 700;
+        align-items: center;
+        img {
+            padding : 0 1rem;
+        }
+    }
+    &__display {
+        display: flex;
+        justify-content: flex-start;
+        position: relative;
+        overflow-x: scroll;
+        overflow-y: visible;
+        height: 27rem;
+        & {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        }
+        &::-webkit-scrollbar {
+         display: none;
+        }
+    
+    }
+
+}
+.comment{
+    &__scroll--next , &__scroll--previous {
+        position: absolute;
+        background-color: $C1_A;
+        padding: 0.8rem 0 ;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 88;
+    }
+    &__scroll--previous {
+        left: 0;
+        border-radius: 0 $radius $radius 0;
+    }
+    &__scroll--next {
+        right: 0;
+        border-radius:  $radius 0 0 $radius ;
+    }
+    &__card {
+        max-width: 37rem;
+        min-width: 30rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2.4rem;
+        border: $C1_D 1px solid;
+        border-radius: $radius;
+        position: relative;
+        margin-right: 3.2rem;
+        &:last-child {
+            margin-right: 0;
+        }
+        &-content {
+            font-size: $fs5;
+            line-height:  $lh5;
+            font-weight: 500;
+            text-align: center;
+            padding:  0 0.8rem;
+            color : $C1_A
+        }
+        &-author {
+            font-size: $fs6;
+            line-height: $lh6;
+            font-weight: 600;
+            text-align: center;
+            color: $C1_C;
+            margin-top: 2.4rem;
+            margin-bottom: 4rem;
+        }
+        &-ava {
+            width: 4.8rem;
+            height: 4.8rem;
+            border-radius: $radius;
+            position: absolute;
+            bottom: 0;
+            transform: translateY(50%);
+        }
+    }
+    
+
+}

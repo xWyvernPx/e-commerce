@@ -52,6 +52,9 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+a{
+  color: #151515;
+}
 a:visited {color: unset;}
 html {
   font-size: 62.5%;

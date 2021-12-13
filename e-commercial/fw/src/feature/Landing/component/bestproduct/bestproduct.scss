@@ -1,0 +1,30 @@
+@import "../../../../scss/variables.scss";
+@import "../../../../scss/mixin.scss";
+.best-farmer {
+    display: flex;
+    padding : 6.4rem 4.45rem;
+    border: 1px solid $C1_D;
+    &__display {
+        display: flex;
+        justify-content: space-evenly;
+        flex: 1;
+    }
+}
+.best-selling {
+    display: flex;
+    padding : 6.4rem 4.45rem;
+    border: 1px solid $C1_D;
+    &__display {
+        display: flex;
+        justify-content: space-evenly;
+        flex: 1;
+        overflow-x: scroll;
+        & {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        }
+        &::-webkit-scrollbar {
+         display: none;
+        }
+    }
+}

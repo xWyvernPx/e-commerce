@@ -1,0 +1,17 @@
+
+@import "../../../../scss/variables.scss";
+@import "../../../../scss/mixin.scss";
+.headline {
+    padding: 6.4rem 4.5rem;
+    width: 100%;
+}
+.headline__display {
+   &{
+       --columns: 4;
+       --gap: 3.2rem;
+       display: grid;
+       grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+       grid-gap: var(--gap);
+   }
+
+}
