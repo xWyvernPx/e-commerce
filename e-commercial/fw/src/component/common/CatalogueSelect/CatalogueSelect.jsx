@@ -5,7 +5,7 @@ import SubcatalogueList from './SubcatalogueList';
 
 function CatalogueSelect(props) {
     const {data} = props;
-    const [subcatalogueList, setSubcatalogueList] = useState(subcatalogue.find(ele=>data.code === ele.main));
+    const [subcatalogueList, setSubcatalogueList] = useState(subcatalogue.find(ele=>data.slug === ele.main));
     const [active, setActive] = useState(false);
     // use data.code to load List subcatalogue
     useEffect(() => {

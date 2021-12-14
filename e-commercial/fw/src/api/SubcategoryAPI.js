@@ -1,0 +1,6 @@
+
+class SubcategoryAPI {
+    getByParentId (id) {
+        
+    }
+}
