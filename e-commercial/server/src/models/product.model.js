@@ -7,7 +7,8 @@ const sequelize = new Sequelize(config);
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey:true
+      primaryKey:true,
+      field : "iD"
     },
     name: {
       type: DataTypes.STRING(50),
@@ -30,9 +31,9 @@ const sequelize = new Sequelize(config);
         type :DataTypes.INTEGER,
         allowNull :false
     },
-    discountID : { 
-        type: DataTypes.INTEGER
-    },
+    // discountID : { 
+    //     type: DataTypes.INTEGER
+    // },
     viewCount : {
         type : DataTypes.INTEGER,
     },

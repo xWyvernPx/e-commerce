@@ -3,14 +3,8 @@ import { Route } from "./routes/index.js";
 import {config} from "../database/dbconfig.js"
 import {Sequelize} from "sequelize"
 import cors from "cors";
+import productService from "./services/product.service.js";
 
-import OrderItem from "./models/orderitem.model.js";
-import Feedback from "./models/feedback.model.js";
-import Discount from "./models/discount.model.js";
-import CartItem from "./models/cartitem.model.js";
-import AddressSet from "./models/addressSet.model.js";
-import Account from "./models/account.model.js";
-import feedbackService from "./services/feedback.service.js";
 
 const app = express();
 var port = 4001;
@@ -33,4 +27,4 @@ try {
 Route(app);
 // checking section
 
-
+// productService.getAll() ;

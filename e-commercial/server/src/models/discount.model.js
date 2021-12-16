@@ -7,7 +7,8 @@ const sequelize = new Sequelize(config);
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey:true
+      primaryKey:true,
+      field: "iD"
     },
     name: {
       type: DataTypes.STRING(50),
