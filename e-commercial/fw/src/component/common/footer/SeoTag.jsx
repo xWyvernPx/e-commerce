@@ -3,7 +3,7 @@ import React from 'react'
 function SeoTag(props) {
     const {tagName} = props;
     return (
-        <a  className='footer__tag-item'>{tagName}</a>
+        <a href='true' className='footer__tag-item'>{tagName}</a>
     )
 }
 

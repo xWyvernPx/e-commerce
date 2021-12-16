@@ -15,7 +15,8 @@ function App() {
         <Header></Header>
         <Suspense fallback={<Spinner/>}>
             <Routes>
-                <Route path="/" element={<Landing/>} ></Route>
+                <Route index path="/" element={<Landing/>} ></Route>
+                <Route path="/:cateslug/:subslug" element={<Spinner></Spinner>} ></Route>
                 <Route >
                  
                 </Route>

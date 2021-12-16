@@ -1,15 +1,18 @@
 import React from 'react'
 
-function CustomerCard() {
+function CustomerCard(props) {
+    const {data} = props;
+   if(data)
     return (
-        <div className="comment__card">
+          <div className="comment__card">
             <p className="comment__card-content">
-                “ This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here “
+                {`"${data.content}"`}
             </p>
-            <h6 className="comment__card-author">Name and Surname</h6>
-            {/* <img src="/static/img/mockup ava round.png" alt="" class="comment__card-ava"> */}
+            <h6 className="comment__card-author">{ data.username}</h6>
+            {/* <img src="/static/img/mockup ava round.png" alt="" class="comment__card-ava"/> */}
         </div>
     )
+    else return <></>
 }
 
 export default CustomerCard

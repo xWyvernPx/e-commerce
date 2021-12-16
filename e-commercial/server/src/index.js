@@ -10,9 +10,10 @@ import Discount from "./models/discount.model.js";
 import CartItem from "./models/cartitem.model.js";
 import AddressSet from "./models/addressSet.model.js";
 import Account from "./models/account.model.js";
+import feedbackService from "./services/feedback.service.js";
 
 const app = express();
-var port = 4000;
+var port = 4001;
 const sequelize = new Sequelize(config);
 app.use(express.json());
 app.use(cors());
@@ -23,7 +24,7 @@ try {
   await sequelize.authenticate();
   console.log('Connection has been established successfully.');
   app.listen(port,()=>{ 
-    console.log("App listening at : http://localhost:4000")
+    console.log("App listening at : http://localhost:4001")
   });
 
 } catch (error) {
@@ -31,5 +32,5 @@ try {
 }
 Route(app);
 // checking section
-const data = await Account.findAll();
-console.log(data);
+
+

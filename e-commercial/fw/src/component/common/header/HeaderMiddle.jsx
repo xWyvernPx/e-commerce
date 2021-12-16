@@ -1,12 +1,17 @@
 import React,{useState} from 'react'
-import {category} from "../../../mockup/category";
+import { useSelector } from 'react-redux';
+import { getData } from '../../../feature/Landing/landingSlice';
+// import {category} from "../../../mockup/category";
 import InlineCart from '../InlineCart/InlineCart';
 
 function HeaderMiddle() {
     const [active, setActive] = useState(false);
     const [cart, setCart] = useState(false);
     const [searchCategory, setSearchCategory] = useState("");
+    const data= useSelector(getData).data;
 
+    // const [category, setCategory] = useState();
+   
     const categoryClickHandle = (e)=> {
         // document.querySelector(".header__category-select--list").classList.toggle("active");
         // document.querySelector(".header__category-select--icon").classList.toggle("spin");
@@ -19,7 +24,7 @@ function HeaderMiddle() {
         setCart(false);
     }
     const searchCategoryChange= (e) =>{
-        console.log(e.target.innerText);
+        // console.log(e.target.innerText);
         setSearchCategory(e.target.innerText);
     }
     const categoryBlur = (e) => {
@@ -37,7 +42,7 @@ function HeaderMiddle() {
                     <ul className={`header__category-select--list ${active ? "active" : ""}`}>
                         
                         {
-                            category.map((ele,i)=><li key={i} onClick={searchCategoryChange} className="header__category-select--option">{ele.name}</li> )
+                            data&&data.map((ele,i)=><li key={i} onClick={searchCategoryChange} className="header__category-select--option">{ele.name}</li> )
                         }
                     </ul>
                 </button>

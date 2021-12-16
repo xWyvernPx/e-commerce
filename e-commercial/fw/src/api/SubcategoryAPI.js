@@ -1,6 +1,8 @@
-
+import {axiosClient} from "./axiosClient";
 class SubcategoryAPI {
-    getByParentId (id) {
-        
+    getByParentSlug (slug) {
+        const url=`/subcategory/${slug}`
+        return axiosClient.get(url);
     }
 }
+export default new SubcategoryAPI();

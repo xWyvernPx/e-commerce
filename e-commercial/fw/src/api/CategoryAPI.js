@@ -1,8 +1,8 @@
-import axiosClient from "./axiosClient";
+import {axiosClient} from "./axiosClient";
 
 class CategoryAPI {
-     getAll(){
-        return axiosClient.get("/category");
+     async getAll(){
+        return await axiosClient.get("/category");
     }
 }
 export default new CategoryAPI();

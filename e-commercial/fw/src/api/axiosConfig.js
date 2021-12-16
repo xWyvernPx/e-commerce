@@ -1,7 +1,7 @@
 import qs from 'query-string'
 
 export const config =  {
-    baseURL :"http://localhost:4000",
+    baseURL :"http://localhost:4001",
     headers :{
         "Content-Type" : "application/json" ,
     },

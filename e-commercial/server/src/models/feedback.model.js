@@ -1,5 +1,6 @@
 import {Sequelize,Model,DataTypes} from "sequelize";
 import { config } from "../../database/dbconfig.js";
+import Account from "./account.model.js";
 const sequelize = new Sequelize(config);
   class Feedback extends Model {}
   Feedback.init({
@@ -39,5 +40,4 @@ const sequelize = new Sequelize(config);
     createdAt:false,
     updatedAt:false
   });
- 
 export default Feedback;
