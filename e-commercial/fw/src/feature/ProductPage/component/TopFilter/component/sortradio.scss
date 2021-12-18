@@ -1,0 +1,32 @@
+@import "../../../../../scss/variables.scss";
+.product-filter__sort-by {
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    background-color: $C1_H;
+    border: $C1_D 1px solid;
+    border-radius: $radius;
+    margin-right: 1.6rem;
+}
+.sort-by__item{
+   margin-top: .9rem;
+   margin-bottom: .9rem;
+   margin-left: 1.6rem;
+   &:last-child {
+       margin-right: 1.6rem;
+   }
+}
+#sort-by__item-p ,
+#sort-by__item-b,
+#sort-by__item-n {
+    outline-color: black;
+}
+.sort-by__item-label{
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+    color : $C1_A;
+    margin-left: .8rem;
+    font-family: "Open Sans";
+    margin-bottom: 5px;
+    font-weight: 500;
+}

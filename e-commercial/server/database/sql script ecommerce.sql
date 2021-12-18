@@ -185,3 +185,10 @@ modefied_at timestamp ,
 deleted_at datetime default null ,
 )
 
+create table SeoTag (
+id int identity primary key not null ,
+name nvarchar(100) not null,
+created_at datetime default CURRENT_TIMESTAMP,
+modefied_at timestamp ,
+deleted_at datetime default null ,
+)

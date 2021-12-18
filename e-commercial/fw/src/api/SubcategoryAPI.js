@@ -1,8 +1,12 @@
 import {axiosClient} from "./axiosClient";
 class SubcategoryAPI {
-    getByParentSlug (slug) {
+    async getByParentSlug (slug) {
         const url=`/subcategory/${slug}`
-        return axiosClient.get(url);
+        return await axiosClient.get(url);
+    }
+    async getBySlug (slug) {
+        const url = `/subcategory/${slug}/slug`;
+        return await axiosClient.get(url);
     }
 }
 export default new SubcategoryAPI();

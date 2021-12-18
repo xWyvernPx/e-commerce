@@ -8,7 +8,7 @@ function Feature() {
    const dispatch = useDispatch();
     useEffect(() => {
         dispatch(loadRandom())
-    }, [])
+    }, [dispatch])
     return (
         <section className="feature">
             <div className="feature__menu">
@@ -17,6 +17,8 @@ function Feature() {
                 <a href="#!" className="feature__menu-more">More categories <img src="https://ik.imagekit.io/flamefoxeswyvernp/Project/UI_challenge/e-commecial/ic-chevron-right-black_bO3AYENdwMv.png?updatedAt=1639053394173" alt="" /></a>
             </div>
             <div className="feature__display">
+                <FeatureAticle/>
+                <FeatureAticle/>
                 <FeatureAticle/>
                 <FeatureAticle/>
                 <FeatureAticle/>

@@ -1,0 +1,32 @@
+@import "../../../../scss/variables.scss";
+.breadcrumb {
+    margin: 1.6rem 4.5rem;
+    
+    &_list{
+
+    }
+    &_link{
+        margin: 0 1.05rem;
+        position: relative;
+        font-size: $fs6;
+        line-height: $lh6;
+        color: $C1_D;
+
+        &::before{
+            content: "/";
+            position: absolute;
+            left: -1.05rem;
+            color: $C1_D;
+        }
+    }
+    &_home {
+        padding-right: 1.05rem;
+        font-size: $fs6;
+        line-height: $lh6;
+        color: $C1_D;
+    }
+    &_active{
+        color: $C1_A;
+    }
+}
+

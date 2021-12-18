@@ -1,0 +1,44 @@
+@import "../../../../scss/variables.scss";
+@import "../../../../scss/mixin.scss";
+.product-page__layout {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20vw 80vw;
+    grid-template-areas: "sidebar main";
+}
+.product-page__sidebar{
+    grid-area: sidebar;
+    padding-left: 4.5rem;
+    padding-top: 3.2rem;
+}
+.product-page__main {
+    grid-area: main;
+    
+}
+.product-page__view{
+    &--grid{
+        &{
+            padding: 1.6rem;
+            --card-size :27.1rem;
+            --col : calc(100% / var(--card-size));
+            
+            --columns: 4;
+            --gap: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(28.1rem, 1fr));
+            grid-row-end: 4;
+            grid-gap: var(--gap);
+        }
+    }
+    &--list{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+}
+.product-page__loadmore{
+    display: block;margin: 0 auto;
+    @include primaryButton(21.4rem,1.2rem);
+}

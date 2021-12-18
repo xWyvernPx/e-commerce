@@ -1,28 +1,26 @@
 import React, { useEffect } from 'react'
-import {useDispatch,useSelector} from "react-redux"
-import BestProduct from '../component/bestproduct/BestProduct'
+import { useDispatch } from "react-redux"
 import BestSelling from '../component/bestselling/BestSelling'
-import Blog from '../component/blog/Blog'
-import Customer from '../component/customer/Customer'
 import Feature from '../component/feature/Feature'
-import Headline from '../component/headline/Headline'
-import { loadList, getData} from '../landingSlice'
-
-
+import { loadList } from '../landingSlice'
+    const Headline2 = React.lazy(()=> import("../component/headline/Headline"));
+    const Blog2 = React.lazy(()=> import("../component/blog/Blog"))
+    const Customer2 = React.lazy(()=> import("../component/customer/Customer"))
+    const BestProduct2  = React.lazy(()=> import("../component/bestproduct/BestProduct"))
 
 function Landing() {
     const dispatch = useDispatch();
      useEffect(() => {
         dispatch(loadList());
-     }, [])
+     }, [dispatch])
     return (
         <div className='landing' >
             <Feature></Feature>
             <BestSelling></BestSelling>
-            <BestProduct></BestProduct>
-            <Customer/>
-            <Headline/>
-            <Blog/>
+            <BestProduct2></BestProduct2>
+            <Customer2/>
+            <Headline2/>
+            <Blog2/>
         </div>
     )
 }

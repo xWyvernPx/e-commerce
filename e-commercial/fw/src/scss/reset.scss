@@ -1,0 +1,72 @@
+html {
+    box-sizing: border-box;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+  // input,
+  textarea,
+  select,
+  button {
+    outline: none;
+  }
+  input {
+    line-height: normal;
+  }
+  label,
+  button {
+    cursor: pointer;
+  }
+  a {
+    text-decoration: none;
+
+  }
+  img {
+    display: block;
+    max-width: 100%;
+  }
+  button {
+    background-color: transparent;
+        outline: none;
+        border: none;
+}
+// input {
+//     background-color: transparent;
+//     outline: none;
+//     border: none;
+//     -webkit-appearance: none;
+// }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+a{
+  color: #151515;
+}
+html {
+  font-size: 62.5%;
+  font-family: "Poppins";
+}
+body{
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+ body{
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  }
+  body::-webkit-scrollbar {
+   display: none;
+  }

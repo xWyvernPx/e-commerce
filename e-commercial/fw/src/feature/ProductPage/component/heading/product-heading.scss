@@ -1,0 +1,45 @@
+@import "../../../../scss/variables.scss";
+.product-heading{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 4.5rem;
+    &_function {
+        display: flex;
+        min-width: 12rem;
+    }
+    &_grid-label , &_list-label {
+        color : $C1_C;
+        transition: all 0.2s linear;
+        display: flex;
+        width: max-content;
+        margin-right: 2.4rem;
+        img {
+            width: 1.6rem;
+            height: 1.6rem;
+            margin-right: 0.4rem;
+        }
+        
+    }
+    &_grid-img , &_list-img {
+        filter: $C1_C_filter;
+        transition: all 0.2s linear;
+
+       
+    }
+    &_view-active {
+        color : $C1_A;
+        img {
+            filter: $C2_A_filter;
+        }
+    }
+    &_view-grid , &_view-list {
+        display: flex ;
+        flex: 0.5;
+    }
+}
+#product-heading_list , #product-heading_grid {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    -webkit-appearance: none;
+}

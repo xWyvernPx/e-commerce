@@ -1,0 +1,152 @@
+@import "../../../scss/mixin.scss";
+@import "../../../scss/variables.scss";
+
+.card {
+    display: flex;
+    border: 1px solid $C1_D;
+    border-radius: $radius;
+    margin: 3.2rem 0;
+    max-height: 28rem;
+    width: 90%;
+&__cover {
+    position: relative;
+    margin-right: 3.2rem;
+    img {
+        height: 100%;
+        width: auto;
+    }
+    p {
+        width: fit-content;
+        padding: .8rem;
+        background-color: $C2_E;
+        color: $C2_A;
+        font-size: $fs6;
+        line-height: $lh6;
+        font-weight: 600;
+        position: absolute;
+        left: 1.6rem;
+        top:0;
+    }
+
+}
+&__content{
+    padding: 3.2rem 0;
+    display: flex;
+    flex-direction: column;
+    flex:1;
+}
+&__name {
+        font-size: $fs4;
+        line-height: $lh4;
+        font-weight: 600;
+}
+&__desc {
+        font-size: $fs6;
+        line-height: $lh6;
+        color: $C1_B;
+        max-width: 35rem;
+}
+&__info {
+    margin-top :5.3rem;
+    display: grid;
+    width: 27rem;
+    grid-template-columns: .8fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "last last-time" "brand brandname" "delivery deliveryop" "sku sku_num";
+    h6{
+        color:$C1_C;
+        font-size: 1.4rem;
+        line-height: 1.9rem;
+        font-family: "Open Sans";
+        font-weight: 400;
+    }
+}
+
+  &__lastupdate-title{
+    grid-area: "last";
+}
+&__lastupdate{
+      grid-area: "last-time" ;
+      color: $C2_A !important;
+    }
+    
+    &__brand-title{
+        grid-area: "brand";
+      
+    }
+    &__brand{
+        grid-area: "brandname";
+        
+    }
+    &__delivery-title{
+        grid-area:  "delivery";
+    }
+    
+    &__delivery{
+        grid-area: "deliveryop";
+        
+    }
+    &__stock--title{
+        grid-area: "sku";
+        
+    }
+    &__stock{
+        grid-area: "sku_num";
+        color: $C2_A !important;
+    }
+    &__payment {
+        display: flex;
+        flex-direction: column;
+        padding: 3.2rem;
+        flex:0;
+    }
+    &__newprice {
+        color: $C1_A;
+        font-size: $fs4;
+        line-height: $lh4;
+        font-weight: 600;
+    }
+    &__oldprice{
+        font-weight: 600;
+        color: $C1_C;
+        font-size: $fs6;
+        line-height: $lh6;
+        text-decoration: line-through;
+    }
+    &__shipping-price{
+        margin-top: 1.6rem;
+        font-size: $fs6 ;
+        line-height: $lh6;
+        font-weight: 600;
+        color: $C1_C;
+
+    }
+    &__shipping-period{
+        font-size: $fs6 ;
+        line-height: $lh6;
+        font-weight: 400;   
+        color: $C1_C;
+
+    }
+    &__detail {
+        margin-top: 2.6rem;
+        @include primaryButton(16.4rem,.6rem);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__wishlist{
+        margin-top: 1.2rem;
+        @include secondaryButton(16.4rem , .7rem);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+    }
+}
+.added{
+    img{
+        filter: brightness(0) saturate(100%) invert(26%) sepia(36%) saturate(6917%) hue-rotate(339deg) brightness(92%) contrast(87%);
+        fill: #DD2E44;
+    }
+}

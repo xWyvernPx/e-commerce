@@ -1,12 +1,13 @@
 
-import './App.scss';
-import { Route ,Routes , NavLink } from 'react-router-dom'
-
-import Header from './component/common/header/Header';
 import { Suspense } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import './App.scss';
 import Footer from './component/common/footer/Footer';
+import Header from './component/common/header/Header';
 import Spinner from './component/common/spinner/Spinner';
 import Landing from './feature/Landing/pages/Landing';
+import ProductPage from './feature/ProductPage/page/ProductPage';
+
 
 function App() {
   return (
@@ -16,10 +17,9 @@ function App() {
         <Suspense fallback={<Spinner/>}>
             <Routes>
                 <Route index path="/" element={<Landing/>} ></Route>
-                <Route path="/:cateslug/:subslug" element={<Spinner></Spinner>} ></Route>
-                <Route >
-                 
-                </Route>
+                <Route path="/:cateslug"  element={<ProductPage/>}></Route>
+                <Route path="/:cateslug/:subslug"  element={<ProductPage/>}></Route>
+                <Route ></Route>
             </Routes>
         </Suspense>
         <Footer></Footer>

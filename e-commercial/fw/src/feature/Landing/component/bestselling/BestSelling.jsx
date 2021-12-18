@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import ProductCard from '../../../../component/common/product card/ProductCard'
+import React from 'react';
+import ProductCard from '../../../../component/common/product card/ProductCard';
 import RandomList from '../common/RandomList';
 import './bestselling.scss';
 function BestSelling() {
@@ -16,7 +16,6 @@ function BestSelling() {
                 <ProductCard/>
             </div>
         </section>
-
     )
 }
 

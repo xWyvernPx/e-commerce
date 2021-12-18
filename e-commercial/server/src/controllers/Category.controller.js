@@ -11,6 +11,10 @@ class CategoryController {
         const data = await categoryService.findById(id);
         res.json(data);
     }
-
+    async GetBySlug (req,res) {
+        const slug = req.params.slug;
+        const data = await categoryService.findBySlug(slug);
+        res.json(data);
+    }
 }
 export default new CategoryController();

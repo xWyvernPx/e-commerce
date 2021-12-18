@@ -1,7 +1,9 @@
 import express from "express";
 import ProductController from "../controllers/Product.controller.js";
+import { sortProductMiddleware } from "../middleware/product-sorting.middleware.js";
 
 const route = express.Router();
+route.get("/" ,sortProductMiddleware);
 route.get("/", ProductController.getAll);
 // route.get("/:id"),
 export default route;

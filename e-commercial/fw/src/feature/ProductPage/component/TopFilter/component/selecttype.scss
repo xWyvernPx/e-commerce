@@ -1,0 +1,54 @@
+@import "../../../../../scss/variables.scss";
+.select {
+    padding: 1.2rem 1.6rem;
+    background-color: $C1_H ;
+    border: 1px solid $C1_D;
+    position: relative;
+    width: max-content ;
+    border-radius: $radius;
+    &__field {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        p{
+            font-size:$fs6 ;
+            line-height: $lh6;
+            color: $C1_A;
+            font-weight: 600;
+            padding-right: 0.4rem;
+        }
+        img {
+            width: 1.2rem;
+            height: 1.2rem;
+            transition: .2s linear all;
+            transition: all .3s linear;
+        }
+    }
+    &__list {
+        position: absolute;
+        z-index: 100;
+        background-color: $C1_H;
+        border: $C1_D 1px solid;
+        border-radius: $radius;
+        
+        list-style: none;
+        width: 100%;
+        left: 0;
+        margin-top: 1.6rem;
+        visibility: collapse;
+
+        &--active {
+            visibility: visible;
+        }
+    }
+    &__item {
+        padding: 1.2rem 0.8rem;
+        color: $C1_A;
+        line-height: $lh6;
+        font-size: $fs6;
+        &:hover {
+            color: $C2_A;
+        }
+    }
+
+}

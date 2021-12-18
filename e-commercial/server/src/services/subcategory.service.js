@@ -31,5 +31,12 @@ class subcategoryService {
         }));
        
     }
+    async findBySlug(slug) {
+        return await Subcategory.findOne({
+            where : {
+                slug : slug
+            }
+        })
+    }
 }
 export default new subcategoryService();

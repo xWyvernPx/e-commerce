@@ -1,6 +1,6 @@
-import { all, call, debounce, fork, put, select, take, takeEvery, takeLatest } from "redux-saga/effects"
+import { call, debounce, fork, put, select, take } from "redux-saga/effects";
 import CategoryAPI from "../../api/CategoryAPI";
-import { getData, loadList, loadListFailed, loadListSuccess, loadRandom, loadRandomFinish } from "./landingSlice";
+import { getData, loadList, loadListSuccess, loadRandom, loadRandomFinish } from "./landingSlice";
 function* landingSaga() {
     yield fork(categoryFetchWatcher);
     yield fork(randomCateWatcher);
@@ -25,7 +25,7 @@ function* randomCateWatcher () {
        yield debounce(500,loadRandom.toString(),randomCateWorker);
     
 }
-function* randomList(data) {
+function randomList(data) {
  
     const list = [];
     

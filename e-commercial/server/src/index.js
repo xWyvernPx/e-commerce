@@ -1,9 +1,8 @@
-import express from "express";
-import { Route } from "./routes/index.js";
-import {config} from "../database/dbconfig.js"
-import {Sequelize} from "sequelize"
 import cors from "cors";
-import productService from "./services/product.service.js";
+import express from "express";
+import { Sequelize } from "sequelize";
+import { config } from "../database/dbconfig.js";
+import { Route } from "./routes/index.js";
 
 
 const app = express();
@@ -14,9 +13,10 @@ app.use(cors());
 app.use(express.urlencoded({
   extended:true
 }))
+
+
 try {
   await sequelize.authenticate();
-  console.log('Connection has been established successfully.');
   app.listen(port,()=>{ 
     console.log("App listening at : http://localhost:4001")
   });

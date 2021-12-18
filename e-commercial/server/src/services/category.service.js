@@ -17,5 +17,12 @@ class CategoryService {
     async findById (id) {
         return await Category.findOne({where : {id : id}});
     }
+    async findBySlug(slug) {
+        return await Category.findOne({
+            where : {
+                slug : slug
+            }
+        });
+    }
 }
 export default new CategoryService;

@@ -3,6 +3,7 @@ import CategoryRoute from "./category.route.js";
 import SubcategoryRoute from "./subcategory.route.js"
 import BlogRoute from "./blog.route.js"
 import FeedbackRoute from "./feedback.route.js"
+import { sortProductMiddleware } from "../middleware/product-sorting.middleware.js";
 
 export const Route = (app) => {
     app.use("/product",ProductRoute);

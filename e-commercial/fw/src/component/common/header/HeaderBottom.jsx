@@ -1,8 +1,7 @@
-import React,{useEffect,useState} from 'react'
+import React from 'react';
 import { useSelector } from 'react-redux';
-import CategoryAPI from '../../../api/CategoryAPI'
 import { getData } from '../../../feature/Landing/landingSlice';
-import CatalogueSelect from '../CatalogueSelect/CatalogueSelect'
+import CatalogueSelect from '../CatalogueSelect/CatalogueSelect';
 function HeaderBottom() {
     const data= useSelector(getData);
     return (
