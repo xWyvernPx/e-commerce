@@ -21,13 +21,13 @@ class ProductService {
         const key2 = sort2.key2;
         offset = (page - 1) * limit;
     
-        console.log(page, limit);
+        console.log([key, order],
+            [key2,order2] , "in service");
         return await Product.findAll({
             include : [ProductImg,{model : Discount }] ,
-            order:[
-                [key, order],
-                [key2,order2]
-              ],
+            order:[ [key2,order2] ,
+                    [key, order]
+                     ],
             where : filter,
             limit : limit,
             offset :offset ,

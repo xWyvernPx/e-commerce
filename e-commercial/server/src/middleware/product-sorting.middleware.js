@@ -1,5 +1,5 @@
 export const sortProductMiddleware = (req,res,next)=> {
-    console.log("in middle ware")
+    console.log("in middle ware" , req.query)
     let {type,rating,budget,brand,orderby,page,limit,categoryID,subcategoryID} = req.query;
     // if(type== null  && budget == null ,brand == null && orderby== null){
     //     next();
@@ -10,18 +10,18 @@ export const sortProductMiddleware = (req,res,next)=> {
         switch(type) {
             case "popular" : {req.query.type = {
                 key : "viewCount" ,
-                order :"DESC"
+                order :"desc"
             }
                 break;
             }
             case "newest" :  { req.query.type = {
                 key : "created_at" ,
-                order :"ASC"
+                order :"asc"
             }
             break;}
             case "best_selling" : {req.query.type = {
                 key : "rating" ,
-                order :"DESC"
+                order :"desc"
             }
         break;    
         }}}
@@ -54,7 +54,7 @@ export const sortProductMiddleware = (req,res,next)=> {
         {
             key : "price",
             value : budget,
-            op: "gte"
+            op: "gte" // gte to have data mock in UI , change lte later
         },{
             key : "rating",
             value : rating,

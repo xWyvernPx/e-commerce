@@ -1,21 +1,13 @@
 import React from 'react'
 import ProductCard from '../../../../../../component/common/product card/ProductCard'
 
-function GridView() {
+function GridView(props) {
+    const {data} = props
+
     return (
          <div className={`product-page__view--grid`}>
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
+                   {data.map((ele,i)=><ProductCard key={i} data={ele} />
+                   )} 
         </div> 
     )
 }

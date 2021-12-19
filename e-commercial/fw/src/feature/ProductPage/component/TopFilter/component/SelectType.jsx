@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import "./selecttype.scss";
 function SelectType(props) {
-    const {data} = props;
+    const {data,onOrderbyChange} = props;
     const [active, setActive] = useState(false);
     const [sortKey, setSortKey] = useState("");
     const handleClick = () =>  {
@@ -9,9 +9,11 @@ function SelectType(props) {
     }
     const handleItemClick = (e) => {
         const text = document.querySelector(".select__text");
-        console.log(e.target.getAttribute("data"));
-        setSortKey(e.target.value)
+        console.log(e.target.getAttribute("data") , "data");
         text.textContent = e.target.innerText;
+        
+        onOrderbyChange(e.target.getAttribute("data"))
+        setSortKey(e.target.getAttribute("data"))
     }
     const onBlurHandle = ()=> {
         setActive(false)

@@ -1,16 +1,14 @@
 import React from 'react'
 import ProductCardList from '../../../../../../component/common/Product Card List/ProductCardList'
 
-function ListView() {
+function ListView(props) {
+    const {data} = props
     return (
         <div className='product-page__view-list'>
-            <ProductCardList/>
-            <ProductCardList/>
-            <ProductCardList/>
-            <ProductCardList/>
-            <ProductCardList/>
-            <ProductCardList/>
-            <ProductCardList/>
+             {data.map((ele,i)=><ProductCardList key={i} data={ele} />
+                   )} 
+            
+            
         </div>
     )
 }

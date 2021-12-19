@@ -7,13 +7,17 @@
     border-radius: $radius;
     margin: 3.2rem 0;
     max-height: 28rem;
-    width: 90%;
+    width: 80%;
+    overflow: hidden;
 &__cover {
     position: relative;
     margin-right: 3.2rem;
     img {
         height: 100%;
-        width: auto;
+        max-width: 25rem;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
     p {
         width: fit-content;
@@ -26,6 +30,7 @@
         position: absolute;
         left: 1.6rem;
         top:0;
+        border-radius: $radius;
     }
 
 }
@@ -45,6 +50,12 @@
         line-height: $lh6;
         color: $C1_B;
         max-width: 35rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* number of lines to show */
+                line-clamp: 3; 
+        -webkit-box-orient: vertical;
 }
 &__info {
     margin-top :5.3rem;

@@ -1,8 +1,8 @@
 import {createSlice} from "@reduxjs/toolkit"
 const initialState = {
     status : "",
-    category : null,
-    subcategory : null ,
+    category : {},
+    subcategory : {} ,
 }
 const productPageSlice = createSlice({
     name : "ProductPage",
@@ -14,7 +14,7 @@ const productPageSlice = createSlice({
         fetchCateInfoSuccess : (state,payload) => {
             state.status = "Fetching category info successful";
             const {category,subcategory} = payload.payload;
-            console.log( payload.payload)
+            console.log( category, subcategory)
             if(category) state.category = category;
             if(subcategory) state.subcategory = subcategory;
 

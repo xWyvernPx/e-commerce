@@ -9,8 +9,8 @@
         // align-items: center;
         border-radius: $radius;
         border: 1px solid $C1_D;
-       width: max-content;
-       margin: 0 1.6rem;
+        width: 27.1rem;
+        margin: 0 1.6rem;
     }
     &__card-discount{
         color: $C2_A;
@@ -25,11 +25,17 @@
     }
     &__card-cover {
         position: relative;
+        flex: 1;
+        max-width: 23.7rem;
     }
     &__card-img {
         margin-bottom: 1.6rem;
-        max-width: 23.7rem;
+        
         height: auto;
+        object-fit: cove;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
     &__card-title {
         font-size: 1.5rem;
@@ -37,19 +43,29 @@
         font-weight: 500;
         margin-bottom: 0.4rem;
         color: C1_A;
+        flex: 0;
     }
     &__card-desc {
+        // flex:0;
         font-size: 1.2rem;
         line-height: 1.6rem;
         font-family: $font-secondary;
         font-weight: 400;
         color: $C1_B;
+        max-width: 27.1rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* number of lines to show */
+                line-clamp: 2; 
+        -webkit-box-orient: vertical;
     }
     &__card-payment {
         display: flex;
         margin-top: 1.6rem;
         justify-content: space-between;
         align-items: center;
+        flex: 0;
     }
     &__card-newprice {
         font-size: $fs4;

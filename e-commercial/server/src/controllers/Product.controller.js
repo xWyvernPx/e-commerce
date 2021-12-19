@@ -16,7 +16,7 @@ class ProductController {
             obj[ele.key] = compare;
             filter = {...filter , ...obj};
         }})
-        console.log(filter);
+        console.log("passing to service",{page,limit},{order ,key},{key2,order2},filter );
    
         const data= await productService.getAll({page,limit},{order ,key},{key2,order2},filter);
         if(data)res.json(data);
