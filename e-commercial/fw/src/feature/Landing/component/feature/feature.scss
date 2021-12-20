@@ -38,13 +38,17 @@
     }
     &__display {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: flex-start;
         overflow-x: scroll;
         flex-grow: 1;
         & {
         -ms-overflow-style: none;
         scrollbar-width: none;
-        }
+            scroll-snap-type:x mandatory;
+            scroll-behavior: smooth;
+            
+    }
+        
         &::-webkit-scrollbar {
          display: none;
         }
@@ -62,6 +66,7 @@
         &:last-child {
             margin-right: 0px;
         }
+        scroll-snap-align: start;
     }
 
     &__subtitle {

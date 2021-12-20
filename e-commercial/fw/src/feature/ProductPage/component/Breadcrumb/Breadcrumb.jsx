@@ -5,7 +5,7 @@ function Breadcrumb() {
     const param = useParams();
     const [list, setList] = useState([]);
     useEffect(() => {
-        setList([...Object.values(param).map(ele => ele.split("-").join(" ").replace(ele.charAt(0),ele.charAt(0).toUpperCase())) ] );
+        setList([...Object.values(param).map(ele => ele.split("_").join(" ").replace(ele.charAt(0),ele.charAt(0).toUpperCase())) ] );
     }, [param])
     return (
         <div className='breadcrumb'>

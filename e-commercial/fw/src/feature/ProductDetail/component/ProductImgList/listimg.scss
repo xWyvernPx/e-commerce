@@ -1,0 +1,45 @@
+@import "../../../../scss/mixin.scss";
+@import "../../../../scss/variables.scss";
+
+.detail {
+    &__imgs{
+        margin-right: 3.2rem;
+        position: relative;
+        grid-area: img;
+        max-height: 100rem;
+        overflow-y: scroll;
+        & {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        }
+        &::-webkit-scrollbar {
+         display: none;
+        }
+        width: fit-content;
+        display: block;margin: 0 auto;
+    }
+    &__img{ 
+        max-width: 56.9rem;
+        max-height: 43.6rem;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        margin-bottom: 3.2rem;
+        border-radius: $radius;
+        display: block;margin-right: 0;
+       
+    }
+    &__discount-tag{
+        font-size: $fs6;
+        line-height: $lh6;
+        padding:0 .8rem;
+        background-color: $C2_E;
+        color: $C2_A;
+        font-weight: 600;
+        border-radius: $radius;
+
+        position: absolute;
+        left : 3.2rem;
+        top:.8rem;
+    }
+}

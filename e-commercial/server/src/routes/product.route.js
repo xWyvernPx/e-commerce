@@ -5,5 +5,7 @@ import { sortProductMiddleware } from "../middleware/product-sorting.middleware.
 const route = express.Router();
 route.get("/" ,sortProductMiddleware);
 route.get("/", ProductController.getAll);
-// route.get("/:id"),
+route.get("/:id" ,ProductController.getOneById);
+route.get("/:category/:subcategory",sortProductMiddleware);
+route.get("/:category/:subcategory",ProductController.getAllByClassification );
 export default route;

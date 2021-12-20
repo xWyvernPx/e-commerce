@@ -37,7 +37,7 @@ function ProductPage() {
             console.log(data)
         }
         fetchProduct();
-    }, [deps]);
+    }, [deps,param]);
     useEffect(() => {
       
         const fetchProduct = async ()=> {

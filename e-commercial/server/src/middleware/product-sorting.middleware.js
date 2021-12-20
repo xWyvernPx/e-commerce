@@ -47,8 +47,8 @@ export const sortProductMiddleware = (req,res,next)=> {
         }
     }
     if(!budget) budget = 0; 
-    if(!categoryID) categoryID =0;
-    if(!subcategoryID) subcategoryID =0;
+    if(!categoryID) categoryID =108;
+    if(!subcategoryID) subcategoryID =2;
     const filter = [];
     filter.push(
         {

@@ -1,5 +1,7 @@
 import {Sequelize,Model,DataTypes} from "sequelize";
 import { config } from "../../database/dbconfig.js";
+import Category from "./category.model.js";
+import Subcategory from "./subcategory.model.js";
 const sequelize = new Sequelize(config);
   class Product extends Model {}
   Product.init({
@@ -19,10 +21,12 @@ const sequelize = new Sequelize(config);
         type : DataTypes.TEXT,
         allowNull:false
     },
-    categoryID : {
-        type : DataTypes.INTEGER,
-        allowNull : false ,
-    },
+    // categoryID : {
+    //     type : DataTypes.INTEGER,
+    //     allowNull : false ,
+    //     references : { model : Category , key : "id"},
+
+    // },
     SKU : {
         type :DataTypes.INTEGER,
         allowNull:false
@@ -32,8 +36,8 @@ const sequelize = new Sequelize(config);
         allowNull :false
     },
     // discountID : { 
-    //     type: DataTypes.INTEGER
-    // },
+    //     type: DataTypes.INTEGER   
+    // },  // bug multiple column called
     viewCount : {
         type : DataTypes.INTEGER,
     },
@@ -43,10 +47,11 @@ const sequelize = new Sequelize(config);
     Rating :{ 
         type : DataTypes.FLOAT,
     },
-    subcategoryID : {
-        type :DataTypes.INTEGER,
-        allowNull:false
-    },
+    // subcategoryID : {
+    //     type :DataTypes.INTEGER,
+    //     allowNull:false,
+    //     references : { model : Subcategory , key : "id"},
+    // },
     created_at : {
         type : DataTypes.DATE,
     },

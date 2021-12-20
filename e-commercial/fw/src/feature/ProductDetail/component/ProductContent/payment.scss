@@ -1,0 +1,84 @@
+
+@import "../../../../scss/variables.scss";
+@import "../../../../scss/mixin.scss";
+
+.detail {
+    &__payment {
+        display:  flex;
+        padding : 1.6rem;
+        border: 1px solid $C1_F;
+        border-radius: $radius;
+        max-width:53.4rem;
+        align-items: center;
+        margin-top: 4rem;
+        
+    }
+    &__price{
+        flex : 1;
+        display: flex;
+        flex-direction:  column;
+        h2{
+            font-size: $fs1;
+            line-height: $lh1;
+            font-weight: 600;
+            color : $C2_A;
+        }
+        h6 {
+            font-size: $fs6;
+            line-height: $lh6;
+            color: $C1_C;
+            text-decoration: line-through;
+            font-weight: 600;
+        }
+        
+    }
+    &__quantity {
+        display: flex;
+        width: 10rem;
+        height: 3.2rem;
+        background-color: $C1_H;
+        align-items: center;
+
+        border-radius: 1.2rem;
+        border: 1px solid $C1_D;
+        overflow: hidden;
+        // flex : 0;
+    }
+    &__count {
+        display: block;
+        width: 50%;
+        padding: 0.6rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        text-align: center;
+        &::placeholder {
+            color : $C1_D;
+            font-weight: 400;
+        }   
+        cursor: text;
+    }
+    &__unit{
+        color: $C1_A;
+        font-size: 1.2rem;
+        font-weight: 600;
+        width: 50%;
+        font-family: $font_primary;
+        padding-left: 0.6rem;
+        border-left: 1px solid $C1_D;
+    }
+    &__tocart {
+        @include primaryButton(14rem,1.2rem);
+        img{
+            width: 1.6rem;
+            height: 1.6rem;
+            margin-right: .6rem;
+        }
+
+        margin-left: 2.4rem;
+        flex: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+}

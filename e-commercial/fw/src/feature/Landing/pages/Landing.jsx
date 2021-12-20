@@ -9,17 +9,14 @@ import { loadList } from '../landingSlice'
     const BestProduct2  = React.lazy(()=> import("../component/bestproduct/BestProduct"))
 
 function Landing() {
-    const dispatch = useDispatch();
-     useEffect(() => {
-        dispatch(loadList());
-     }, [dispatch])
+    
     return (
         <div className='landing' >
             <Feature></Feature>
-            <BestSelling></BestSelling>
-            <BestProduct2></BestProduct2>
+            {/* <BestSelling></BestSelling> */}
+            {/* <BestProduct2></BestProduct2>
             <Customer2/>
-            <Headline2/>
+            <Headline2/> */}
             <Blog2/>
         </div>
     )
