@@ -1,3 +1,4 @@
+@import "./variables.scss";
 @mixin primaryButton ($width, $padding) {
     
     outline :none;
@@ -49,4 +50,26 @@
     line-height: 2.25rem;
     font-weight: 700;
 }
+@mixin MediumField($width) {
+    height: 4.2rem;
+    width: $width;
+    border: 1px solid $C1_D;
+    background-color: $C1_H;
+    box-sizing: border-box;
+    border-radius: 12px;
+    padding: 1.2rem 2.1rem;
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+    color: $C1_A;
+    &::placeholder{
+        color :$C1_C;
+    }
 
+}
+
+@mixin h6($color , $weight) {
+    font-size: $fs6;
+    line-height: $lh6;
+    color:  $color;
+    font-weight: $weight;
+}

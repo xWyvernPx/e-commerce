@@ -1,11 +1,13 @@
 import React from 'react'
+import { calcNewPrice } from '../../../../component/common/Product Card List/ProductCardList';
 import "./payment.scss"
-function ProductPayment() {
+function ProductPayment(props) {
+    const {price,discount} = props;
     return (
         <div className='detail__payment'>
             <div className="detail__price">
-                <h2 className="detail__newprice">36.23 USD</h2>
-                <h6 className="detail__oldprice">48.56USD</h6>
+                {discount && <h2 className="detail__newprice">{calcNewPrice(price,discount.discount_percent)} $</h2> }
+                <h6 className="detail__oldprice">{price} $</h6>
             </div>
             <div className="detail__quantity">
                         <input type="number"  placeholder="1 pcs" className="detail__count" />

@@ -1,0 +1,35 @@
+@import "../../../../../scss/mixin.scss";
+@import "../../../../../scss/variables.scss";
+
+.bill-method {
+    margin-bottom: 6.4rem;
+    &__tag{
+        display: flex;width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $C1_F;
+        border-radius: $radius;
+        border: $C1_A 1px solid;
+        padding: 1.4rem 1.8rem;
+        margin-bottom: 1.6rem;
+    }
+    &__label{
+        display: flex;
+        align-items: center;
+        gap: 0 .8rem;
+        label{
+            color: $C1_A;
+            font-weight: 600;
+            font-size: $fs6;
+            line-height: $lh6;
+        }
+    }
+    &__value {
+        display: flex;
+        gap : 0 .8rem;
+        
+    }
+    &__price {
+        color : $C2_A;
+    }
+}

@@ -43,12 +43,12 @@ function ProductCardList(props) {
         </div>
     )
 }
-function calcDay(date) {
+export function calcDay(date) {
 
    return new Date(Date.now() - Date.parse(date)).getDate();
     
 }
-function calcNewPrice (price, discount_percent){
+export function calcNewPrice (price, discount_percent){
     return (price * (discount_percent /100)).toFixed(2);
 }
 

@@ -1,0 +1,102 @@
+@import "../../../../../scss/mixin.scss";
+@import "../../../../../scss/variables.scss";
+
+.checkout {
+    &__step1-form{
+        display: flex;
+        gap: 0 3.2rem;
+    }
+    &__text-field{
+        display: flex;
+        flex-direction: column;
+    }
+    &__fname{
+        @include MediumField(32rem);
+        &--label{
+            @include h6($C1_A,600);
+        }
+        margin-bottom: 3.2rem;
+    }
+    &__lname{
+        @include MediumField(32rem);
+        &--label{
+            @include h6($C1_A,600);
+        }
+        margin-bottom: 3.2rem;
+    }
+    &__email{
+        @include MediumField(32rem);
+        &--label{
+            @include h6($C1_A,600);
+        }
+        margin-bottom: 3.2rem;
+    }
+    &__address{
+        @include MediumField(32rem);
+        &--label{
+            @include h6($C1_A,600);
+        }
+        margin-bottom: 3.2rem;
+    }
+    &__district {
+        @include MediumField(32rem);
+        &--label{
+            @include h6($C1_A,600);
+        }
+        margin-bottom: 3.2rem;
+    }
+    &__phone {
+        @include MediumField(32rem);
+        &--label{
+            @include h6($C1_A,600);
+        }
+        margin-bottom: 3.2rem;
+    }
+    &__city {
+        @include MediumField(32rem);
+        &--label{
+            @include h6($C1_A,600);
+        }
+        margin-bottom: 3.2rem;
+    }
+    &__commune{
+        @include MediumField(32rem);
+        &--label{
+            @include h6($C1_A,600);
+        }
+        margin-bottom: 3.2rem;
+    }
+
+    &__step1-subtitle{
+        h6{
+            color :$C1_C;
+            font-weight: 400;
+        }
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 3.2rem;
+    }
+    &__step1-title{
+            margin-bottom: .4rem;
+    }
+    &__otherAddress {
+        @include MediumField(32rem);
+        &--label{
+            @include h6($C1_A,600);
+        }
+        margin-bottom: 3.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        input {
+            margin-right: 0.8rem;
+            height: 20px;
+        }
+    }
+    &__orderaddress{
+        visibility: collapse;
+        &--active {
+            visibility: visible;
+        }
+    }
+}

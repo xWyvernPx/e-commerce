@@ -11,9 +11,15 @@
     }
     &__related{
         padding: 3.6rem 4.5rem;
+        &-list{
+            display: flex;
+            gap: 0 2rem;
+            overflow-x: auto;
+        }
         &-header {
             display: flex;
             justify-content: space-between;
+            margin-bottom: 2.4rem;
             h4 {
                 font-size: $fs4;
                 line-height: $lh4;

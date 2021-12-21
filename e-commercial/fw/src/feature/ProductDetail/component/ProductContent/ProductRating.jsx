@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./rating.scss"
-function ProductRating() {
+function ProductRating(props) {
+    const {rating, buyCount} = props
+    useEffect(() => {
+        // console.log(rating,"rating")
+        document.querySelectorAll(".rating__input").forEach(ele => {
+             if(ele.defaultValue== roundToHalf(rating)) ele.checked = true;
+            // console.log()
+        })
+    }, [rating])
     return (
+       
         <div id="half-stars-example">
             <div className="rating-group">
                 <input className="rating__input rating__input--none" defaultChecked name="rating2" id="rating2-0" defaultValue={0} type="radio" />
@@ -27,9 +36,11 @@ function ProductRating() {
                 <label aria-label="5 stars" className="rating__label" htmlFor="rating2-50"><i className="rating__icon rating__icon--star fa fa-star" /></label>
                 <input className="rating__input" name="rating2" id="rating2-50" defaultValue={5} type="radio" />
             </div>
-           
+            <p className='detail__buycount'>{buyCount}</p>
         </div>
     )
 }
-
+const roundToHalf = (num)=> {
+    return Math.round(2*num)/2;
+}
 export default ProductRating

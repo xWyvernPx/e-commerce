@@ -1,0 +1,24 @@
+@import "../../../../../scss/mixin.scss";
+@import "../../../../../scss/variables.scss";
+
+.checkout{
+    &__additional-form {
+        display: flex; 
+        flex-direction: column;
+        label{
+            font-size: $fs6;
+            line-height: $lh6;
+            font-weight: 600;
+            margin-bottom: .8rem;
+        }
+        textarea {
+            @include MediumField(100%);
+            resize: none;
+            height: 11rem !important;
+        }
+
+    }
+    &__additional {
+        margin-bottom: 6.4rem;
+    }
+}

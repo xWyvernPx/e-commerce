@@ -1,3 +1,4 @@
+@import "./variables.scss";
 html {
     box-sizing: border-box;
   }
@@ -69,4 +70,40 @@ body{
   }
   body::-webkit-scrollbar {
    display: none;
+  }
+  h1 {
+    font-size: $fs1;
+    line-height: $lh1;
+    color: $C1_A ;
+    font-weight: 600;
+  }
+  h2 {
+    font-size: $fs2;
+    line-height: $lh2;
+    color: $C1_A ;
+    font-weight: 600;
+  }
+  h3 {
+    font-size: $fs1;
+    line-height: $lh3;
+    color: $C1_A ;
+    font-weight: 600;
+  }
+  h4 {
+    font-size: $fs4;
+    line-height: $lh4;
+    color: $C1_A ;
+    // font-weight: 600;
+  }
+  h5 {
+    font-size: $fs5;
+    line-height: $lh5;
+    color: $C1_A ;
+    // font-weight: 600;
+  }
+  h6 {
+    font-size: $fs6;
+    line-height: $lh6;
+    color: $C1_A ;
+    // font-weight: 600;
   }

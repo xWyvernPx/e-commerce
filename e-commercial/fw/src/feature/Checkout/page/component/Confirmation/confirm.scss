@@ -1,0 +1,20 @@
+@import "../../../../../scss/mixin.scss";
+@import "../../../../../scss/variables.scss";
+
+.checkout{
+    &__confirm {
+        margin-top: 6.4rem;
+    }
+    &__confirm-item {
+        @include  MediumField(auto);
+        label {
+            font-size: $fs6;
+            line-height: $lh6;
+            
+        }
+        display: flex;
+        align-items: center;
+        gap : 0 .8rem;
+        margin-bottom: .8rem;
+    }
+}

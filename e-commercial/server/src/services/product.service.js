@@ -58,7 +58,7 @@ class ProductService {
             where : { id : id}
         })
     }
-    async getAllByCate (pagination,slug,filter) {
+    async getAllByCate (pagination,slug,filter,sort) {
      
         Product.hasMany(ProductImg ,)
         Product.belongsTo(Discount,{foreignKeyConstraint : "FK_ProductDiscount"})
@@ -75,7 +75,7 @@ class ProductService {
             limit = pagination.limit;
             offset = (page - 1) * limit;
         }
-        // let {order,key} = sort;
+        let {order,key} = sort;
         // const {order2,key2} = sort2;
         const {category,subcategory} = slug
         console.log(slug)
@@ -84,9 +84,10 @@ class ProductService {
                 {model: Category ,where : { slug : category}} ,
                 {model : Subcategory , where : { slug : subcategory }}
             ] ,
-            // order:[ [key2,order2] ,
-            //         [key, order]
-            //          ],
+            order:[ 
+                        [key, order]
+                        // [key2,order2] ,
+                     ],
             where : filter,
             limit : limit,
             offset :offset ,

@@ -50,7 +50,7 @@ class ProductController {
         console.log(filter, "filter")
         //===========================================================
         // {order ,key},{key2,order2},filter,
-        const data = await productService.getAllByCate({page,limit},{category,subcategory},filter);
+        const data = await productService.getAllByCate({page,limit},{category,subcategory},filter,{key,order});
         res.json(data)
     }
 }

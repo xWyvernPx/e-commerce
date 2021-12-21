@@ -1,7 +1,8 @@
 #half-stars-example {
 
     /* use display:inline-flex to prevent whitespace issues. alternatively, you can put all the children of .rating-group on a single line */
-   
+    display:  flex;
+    align-items: center;
     margin-top: .8rem;
     .rating-group {
       display: inline-flex;
@@ -81,5 +82,18 @@
     /* make none icon red on hover */
     .rating__input--none:hover + .rating__label .rating__icon--none {
     //   color: red;
+    }
+  }
+  .detail{
+    &__buycount {
+      font-size: 1.2rem ;
+      line-height: 1.8rem;
+      color: #a9a9a9;
+      margin-left: 1rem;
+      font-weight: 600;
+      &::after {
+        content: "Purchased";
+        margin-left: .6rem;
+      }
     }
   }

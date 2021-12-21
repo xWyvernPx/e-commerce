@@ -5,6 +5,7 @@ import './App.scss';
 import Footer from './component/common/footer/Footer';
 import Header from './component/common/header/Header';
 import Spinner from './component/common/spinner/Spinner';
+import CheckoutPage from './feature/Checkout/page/CheckoutPage';
 import Landing from './feature/Landing/pages/Landing';
 import ProductDetail from './feature/ProductDetail/page/ProductDetail';
 import ProductPage from './feature/ProductPage/page/ProductPage';
@@ -21,7 +22,7 @@ function App() {
                 <Route path="/:cateslug"  element={<ProductPage/>}></Route>
                 <Route path="/:cateslug/:subslug"  element={<ProductPage/>}></Route>
                 <Route path="/:cateslug/:subslug/:id"  element={<ProductDetail/>}></Route>
-               
+                <Route path= "/checkout" element = {<CheckoutPage/>} />
                 <Route ></Route>
             </Routes>
         </Suspense>
