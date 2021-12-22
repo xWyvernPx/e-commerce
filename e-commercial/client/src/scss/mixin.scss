@@ -53,8 +53,8 @@
 @mixin MediumField($width) {
     height: 4.2rem;
     width: $width;
-    border: 1px solid $C1_D;
     background-color: $C1_H;
+    border: 1px solid $C1_D;
     box-sizing: border-box;
     border-radius: 12px;
     padding: 1.2rem 2.1rem;
