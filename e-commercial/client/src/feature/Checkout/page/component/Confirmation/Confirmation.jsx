@@ -16,8 +16,15 @@ function Confirmation() {
                 <input type="checkbox" name="" id="checkout__confirm-newsletter" />
                 <label htmlFor="checkout__confirm-newsletter">I agree with our <u>terms and conditions</u> and <u>privacy policy</u>.</label>
             </div>
+            <button className="checkout__submit" type="submit">Complete order</button>
+            <div className="checkout__commisson">
+                <img src="https://ik.imagekit.io/flamefoxeswyvernp/Project/UI_challenge/e-commecial/Vrstva_302_ByNfznmC5.svg?updatedAt=1640159153605" alt="" />
+
+                <h6>We are using the most advanced security to provide you the best experience ever.</h6>
+            </div>
         </div>
     )
 }
 
 export default Confirmation
+

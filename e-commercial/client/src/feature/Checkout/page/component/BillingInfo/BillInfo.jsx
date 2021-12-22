@@ -7,6 +7,7 @@ function BillInfo() {
     const [district, setDistrict] = useState([]);
     const [commune, setCommune] = useState([]);
     const {register,formState:{errors}} = useForm();
+    console.log(commune)
     useEffect(() => {
         const fetchCity = async () => {
                 const data = await ProvinceAPI.getCity().then(
@@ -37,6 +38,7 @@ function BillInfo() {
             setCommune(data.wards);
         }
         fetchWard();
+        
     }
     const orderAddressHandle = (e) =>
     {

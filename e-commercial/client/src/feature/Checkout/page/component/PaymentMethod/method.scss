@@ -1,0 +1,116 @@
+@import "../../../../../scss/variables.scss";
+@import "../../../../../scss/mixin.scss";
+
+.payment-method {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 6.4rem;
+   
+    &__logos{
+        display: flex;
+        gap: 0 .8rem;
+    }
+    &__item{
+        width: 100%;
+        padding: 1.4rem 1.8rem;
+        background-color: $C1_F;
+        border-radius: $radius;
+        border: $C1_D 1px solid;
+        margin-bottom: 1.6rem;
+    }
+    &__title{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__label{
+        display: flex;
+        align-items: center;
+        input{
+            margin-right: .8rem;
+
+        }
+        label {
+            font-size: $fs6;
+            line-height: $lh6;
+            color : $C1_A;
+            font-weight: 600;
+        }
+    }
+    &__info {
+        display : flex;
+        flex-direction: column;  
+        display: none;
+        &--active{
+            display: block;
+        }
+    }
+
+    &__subinfo{
+        display:  flex ;
+        flex-direction: row;
+
+    }
+    &__cardnum {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 3.2rem;
+        margin-top: 3.2rem;
+        input{
+            @include MediumField(100%)
+        }
+        label {
+            font-size: $fs6;
+            line-height: $lh6;
+            color : $C1_A;
+            font-weight: 600;
+        }
+    }
+    &__cardholder {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        margin-right: 3.2rem;
+        input{
+            @include MediumField(100%)
+        }
+        label {
+            font-size: $fs6;
+            line-height: $lh6;
+            color : $C1_A;
+            font-weight: 600;
+        }
+    }
+    &__expired {
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        margin-right: 1.6rem;
+        input{
+            @include MediumField(100%)
+        }
+        label {
+            font-size: $fs6;
+            line-height: $lh6;
+            color : $C1_A;
+            font-weight: 600;
+        }
+    }
+    &__cvc {
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        input{
+            @include MediumField(100%)
+        }
+        label {
+            font-size: $fs6;
+            line-height: $lh6;
+            color : $C1_A;
+            font-weight: 600;
+        }
+    }
+    
+
+}
