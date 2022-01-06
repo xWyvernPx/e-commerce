@@ -13,10 +13,10 @@ function Landing() {
     return (
         <div className='landing' >
             <Feature></Feature>
-            {/* <BestSelling></BestSelling> */}
-            {/* <BestProduct2></BestProduct2>
+            <BestSelling></BestSelling>
+            <BestProduct2></BestProduct2>
             <Customer2/>
-            <Headline2/> */}
+            <Headline2/>
             <Blog2/>
         </div>
     )

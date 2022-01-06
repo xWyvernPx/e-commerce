@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import CustomerCard from './CustomerCard'
 import "./customer.scss"
 import FeedbackAPI from "../../../../api/FeedbackAPI"
+import Slider from "react-slick"
+import {} from 
 function Customer() {
     const [list, setList] = useState([]);
   
@@ -25,6 +27,14 @@ function Customer() {
         }
         
     , [])
+    const settings = {
+        dots: true,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 5,
+        slidesToScroll: 5,
+        vertical : false
+      };
     return (
         <section className="customer">
             <div className="customer__header">
@@ -34,7 +44,9 @@ function Customer() {
             <button className="comment__scroll--previous" type="button"><img src="https://ik.imagekit.io/flamefoxeswyvernp/Project/UI_challenge/e-commecial/ic-chevron-left-white_MBGX3W7bp.png?updatedAt=1639053393535" alt="" /></button>
             <button className="comment__scroll--next" type="button"><img src="https://ik.imagekit.io/flamefoxeswyvernp/Project/UI_challenge/e-commecial/ic-chevron-right-white_m7jjZJscG.png?updatedAt=1639053394469" alt="" /></button>
             <div className="customer__display">
-                {list&& list.map((ele,i)=> <CustomerCard data={ele} key={i}/>)}
+                <Slider {...settings}>
+                {list&& list.map((ele,i)=> <CustomerCard data={ele} key={i}/> )}
+                </Slider>
                 
                 <CustomerCard></CustomerCard>
             </div>

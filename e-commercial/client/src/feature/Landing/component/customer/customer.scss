@@ -28,19 +28,19 @@
         }
     }
     &__display {
-        display: flex;
-        justify-content: flex-start;
-        position: relative;
-        overflow-x: scroll;
-        overflow-y: visible;
-        height: 27rem;
-        & {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-        }
-        &::-webkit-scrollbar {
-         display: none;
-        }
+        // display: flex;
+        // justify-content: flex-start;
+        // position: relative;
+        // overflow-x: scroll;
+        // overflow-y: visible;
+        // height: 27rem;
+        // & {
+        // -ms-overflow-style: none;
+        // scrollbar-width: none;
+        // }
+        // &::-webkit-scrollbar {
+        //  display: none;
+        // }
     
     }
 
