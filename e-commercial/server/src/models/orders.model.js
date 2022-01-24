@@ -1,5 +1,6 @@
 import {Sequelize,Model,DataTypes} from "sequelize";
 import { config } from "../../database/dbconfig.js";
+import Account from "./account.model.js";
 const sequelize = new Sequelize(config);
   class Orders extends Model {}
   Orders.init({
@@ -46,5 +47,6 @@ const sequelize = new Sequelize(config);
     createdAt:false,
     updatedAt:false
   });
- 
+ Account.hasMany(Orders , {foreignKeyConstraint : "FK_OrdersAccount"})
+ Orders.belongsTo(Account,{foreignKeyConstraint : "FK_OrdersAccount"})
 export default Orders;

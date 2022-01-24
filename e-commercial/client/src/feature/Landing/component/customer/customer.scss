@@ -28,19 +28,19 @@
         }
     }
     &__display {
-        // display: flex;
-        // justify-content: flex-start;
+        display: flex;
+        justify-content: flex-start;
         // position: relative;
         // overflow-x: scroll;
         // overflow-y: visible;
-        // height: 27rem;
-        // & {
-        // -ms-overflow-style: none;
-        // scrollbar-width: none;
-        // }
-        // &::-webkit-scrollbar {
-        //  display: none;
-        // }
+        height: 27rem;
+        & {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        }
+        &::-webkit-scrollbar {
+         display: none;
+        }
     
     }
 
@@ -110,3 +110,25 @@
     
 
 }
+.swiper {
+    width: 100%;
+}
+// .swiper-button-prev {
+//     background-color: black;
+//     background-color: rgba(255, 255, 255, 0.5);
+//     right:10px;
+//     padding: 30px;
+//     color: #000 !important;
+//     fill: black !important;
+//     stroke: black !important;
+//   }
+  
+//   .swiper-button-next {
+//     background-color: black;
+//     background-color: rgba(255, 255, 255, 0.5);
+//     right:10px;
+//     padding: 30px;
+//     color: #000 !important;
+//     fill: black !important;
+//     stroke: black !important;
+//   }

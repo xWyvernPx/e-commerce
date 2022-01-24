@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@withshepherd/faker": "^5.5.5",
     "history": "^5.2.0"
   }
 }

@@ -1,8 +1,8 @@
-/*create database ecommerce ;
-go */
+-- create database ecommerce ;
+-- go 
 
---use ecommerce;
---go
+-- use ecommerce;
+-- go
 
 create table account (
 id int identity primary key NOT NULL,
@@ -13,6 +13,11 @@ phone varchar(15) UNIQUE ,
 Address nvarchar(200),
 gender varchar(10) default 'male',
 name nvarchar(150) NOT NULL ,
+bod date default null,
+last_login DATETIME default NULL,
+session NVARCHAR(100),
+token NVARCHAR(200),
+JWT NVARCHAR(200),
 ava varchar(300) default 'https://ik.imagekit.io/flamefoxeswyvernp/Project/UI_challenge/e-commecial/721756_people_512x512_iYbSPV_4G.png?updatedAt=1639321462942' ,
 active bit NOT NULL,
 created_at datetime default CURRENT_TIMESTAMP,
@@ -111,7 +116,12 @@ discountID int default NULL ,
 viewCount int default 0 ,
 buyCount int default 0 ,
 Rating float default 0 ,
+instock int DEFAULT 0,
+brand nvarchar(100),
+from_province int DEFAULT null,
+from_district int default null,
 subcategoryID int Not null ,
+
 constraint FK_ProductCategory 
 foreign key (categoryID) references dbo.category(id),
 constraint FK_ProductDiscount 
@@ -122,6 +132,71 @@ created_at datetime default CURRENT_TIMESTAMP,
 modefied_at timestamp ,
 deleted_at datetime default null ,
 )
+
+create TABLE product_review (
+id int identity primary key NOT NULL,
+userId int not null,
+productId int not null,
+rate int default null,
+content text,
+appreciate int default 0,
+dislike int default 0,
+CONSTRAINT FK_ReviewProduct 
+FOREIGN key (productId) REFERENCES product(id),
+CONSTRAINT FK_ReviewUser
+foreign KEY (userId) REFERENCES account(id),
+created_at datetime default CURRENT_TIMESTAMP,
+modefied_at timestamp ,
+deleted_at datetime default null ,
+)
+go
+
+
+
+create table question(
+id int identity primary key NOT NULL,
+userId int not null,
+productId int not null,
+content text,
+CONSTRAINT FK_QuestionProduct 
+FOREIGN key (productId) REFERENCES product(id),
+CONSTRAINT FK_QuestionUser
+foreign KEY (userId) REFERENCES account(id),
+created_at datetime default CURRENT_TIMESTAMP,
+modefied_at timestamp ,
+deleted_at datetime default null ,
+)
+go
+create table answer (
+id int identity primary key NOT NULL,
+userId int not null,
+content text,
+questId int not null,
+CONSTRAINT FK_AnswerQuestion 
+foreign KEY (questId) REFERENCES question(id),
+CONSTRAINT FK_AnswerUser
+foreign KEY (userId) REFERENCES account(id),
+created_at datetime default CURRENT_TIMESTAMP,
+modefied_at timestamp ,
+deleted_at datetime default null ,
+)
+go
+
+create table wishlist (
+id int identity primary key NOT NULL,
+userId int not null,
+active bit,
+productId int not null,
+CONSTRAINT FK_WishlistProduct 
+foreign KEY (productId) REFERENCES product(id),
+CONSTRAINT FK_WishlistUser
+foreign KEY (userId) REFERENCES account(id),
+created_at datetime default CURRENT_TIMESTAMP,
+modefied_at timestamp ,
+deleted_at datetime default null ,
+)
+go
+
 
 create table product_img (
 id int identity primary key NOT NULL,

@@ -1,0 +1,60 @@
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixin.scss";
+
+.login {
+    &__page{
+        height: 60rem;
+        width: 100%;
+        background-image: url("https://ik.imagekit.io/flamefoxeswyvernp/Project/UI_challenge/e-commecial/login_banner_ODiItS5im.png?updatedAt=1641512548603");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15rem;
+    }
+    &__logo{
+        width: 30rem;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__form {
+        background-color: $C1_J;
+        width: 40rem;
+        height: 75%;
+        border-radius: $radius;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        label {
+            visibility: hidden;
+        }
+        h3 {
+            margin-bottom: 2.4rem;
+        }
+        span {
+            margin-top: 1.2rem;
+        }
+
+    }
+    &__forgot{
+        margin-top: 1.2rem;
+    }
+    &__user{
+        @include MediumField(80%);
+    }
+    &__password{
+        @include MediumField(80%);
+    }
+    &__submit{
+        @include primaryButton(50%,.6rem);
+        margin-top: 1.6rem;
+    }
+}

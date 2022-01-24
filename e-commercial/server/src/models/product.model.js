@@ -27,6 +27,18 @@ const sequelize = new Sequelize(config);
     //     references : { model : Category , key : "id"},
 
     // },
+    instock : {
+      type : DataTypes.INTEGER,
+    },
+    brand : {
+      type : DataTypes.STRING,
+    },
+    from_province : {
+      type : DataTypes.INTEGER,
+    },
+    from_district : {
+      type : DataTypes.INTEGER
+    },
     SKU : {
         type :DataTypes.INTEGER,
         allowNull:false
@@ -71,5 +83,4 @@ const sequelize = new Sequelize(config);
     createdAt:false,
     updatedAt:false
   });
- 
 export default Product;
