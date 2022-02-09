@@ -4,15 +4,15 @@ import "./customer.scss"
 import FeedbackAPI from "../../../../api/FeedbackAPI"
 import Slider from "react-slick"
 
-import SwiperCore,{ Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+// import SwiperCore,{ Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react'
 
 
 
-import 'swiper/swiper.min.css'
-import 'swiper/modules/pagination/pagination.min.css'
-import 'swiper/modules/navigation/navigation.min.css'
-SwiperCore.use([Navigation]);
+// import 'swiper/swiper.min.css'
+// import 'swiper/modules/pagination/pagination.min.css'
+// import 'swiper/modules/navigation/navigation.min.css'
+// SwiperCore.use([Navigation]);
 
 function Customer() {
     const [list, setList] = useState([]);
@@ -55,7 +55,7 @@ function Customer() {
             <button className="comment__scroll--next" type="button"><img src="https://ik.imagekit.io/flamefoxeswyvernp/Project/UI_challenge/e-commecial/ic-chevron-right-white_m7jjZJscG.png?updatedAt=1639053394469" alt="" /></button> */}
             <div className="customer__display">
                 {/* <Slider {...settings}> */}
-            <Swiper
+            {/* <Swiper
                 modules={[ Pagination, Scrollbar, A11y]}
                 spaceBetween={50}
                 slidesPerView={5}
@@ -69,7 +69,7 @@ function Customer() {
                 
                 {list && list.map((ele, i) =><SwiperSlide><CustomerCard data={ele} key={i} /></SwiperSlide> )}
               
-            </Swiper>
+            </Swiper> */}
 
                 {/* </Slider> */}
                 

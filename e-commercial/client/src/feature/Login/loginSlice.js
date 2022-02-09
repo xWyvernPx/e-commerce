@@ -13,12 +13,12 @@ const loginSlice = createSlice({
              state.loginProcess = "LOGGING IN";
          },
         loginSuccessful : (state,payload) => {
-            state.loginProcess= "LOGIN SUCCESSFUL";
-            state.loginInfo = {...payload};
+            state.loginProcess= "SUCCESSFUL";
+            state.loginInfo = {...payload.payload};
             state.loginState = true;
         },
         loginFailed : (state,payload) =>{
-            state.loginProcess = "LOGIN FAILED";
+            state.loginProcess = "FAILED";
         }
     }
 });

@@ -4,14 +4,16 @@ import {ExtractJwt} from "passport-jwt";
 import passport_jwt from "passport-jwt";
 import LocalStrategy from "passport-local/lib/strategy.js";
 import Account from "../models/account.model.js";
+import accountService from "../services/account.service.js";
 passport.use(new JwtStrategy({
     jwtFromRequest : ExtractJwt.fromAuthHeaderAsBearerToken("Authorization"),
     secretOrKey : "FRESHNECOM",
 },
-(payload,done)=>{
+async (payload,done)=>{
         try {
-            console.log(payload);
-            return done(null, payload);
+            console.log("passport jwt",payload);
+            const user = await Account.findOne({where : {id : payload.sub}})
+            return done(null, user);
         } catch (error) {
             
            return done(error, false);

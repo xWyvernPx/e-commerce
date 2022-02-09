@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
 import "./login.scss"
 import {login} from "../loginSlice"
 function Login() {
@@ -8,6 +8,11 @@ function Login() {
         username : "",
         password: "",
     })
+    const loginState = useSelector(state=> console.log(state.rootReducer.loginReducer.loginState))
+    let navigation = useNavigate();
+    if(loginState) navigation("/");
+    
+    
     const dispatch = useDispatch();
     const onUserChange = (e) =>{
         setLoginInfo({...loginInfo , username : e.target.value})

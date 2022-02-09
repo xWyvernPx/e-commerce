@@ -4,8 +4,8 @@ import { Sequelize } from "sequelize";
 import { config } from "../database/dbconfig.js";
 import { Route } from "./routes/index.js";
 import faker from "@withshepherd/faker/locale/en.js"
-import Account from "./models/account.model.js";
-import 'dotenv/config'
+import "./models/relation.config.js";
+import 'dotenv/config.js'
 
 const app = express();
 var port = 4001;

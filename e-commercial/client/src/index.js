@@ -5,10 +5,11 @@ import App from './App';
 import {Provider} from "react-redux"
 import {BrowserRouter as Router } from 'react-router-dom'
 import store from "./app/store.js"
+import {history}from "./utils/history"
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router>
+      <Router history = {history} >
         <App />
       </Router>
     </Provider>

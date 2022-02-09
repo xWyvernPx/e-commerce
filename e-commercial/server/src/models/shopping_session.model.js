@@ -13,6 +13,7 @@ const sequelize = new Sequelize(config);
     accountID : {
         type : DataTypes.INTEGER,
         allowNull : false ,
+        unique: true
     },
     created_at : {
         type : DataTypes.DATE,
@@ -34,4 +35,5 @@ const sequelize = new Sequelize(config);
     updatedAt:false
   });
   // sequelize.close();
+ 
 export default ShoppingSession;

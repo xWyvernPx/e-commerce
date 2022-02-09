@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import "./cart.scss"
 import CartProduct from './CartProduct';
 function InlineCart(props) {
     const {active, onClose} = props;
+    const user = useSelector(state => state.rootReducer.loginReducer.loginInfo);
+    
+    useEffect(() => {
+        console.log(user);
+    }, [user]);
+    
     return (
         <div className={`checkout__cart ${active ? "cartActive" :""}`}>
                 <div className="checkout__header">

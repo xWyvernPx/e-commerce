@@ -18,10 +18,10 @@ const sequelize = new Sequelize(config);
         type : DataTypes.INTEGER,
         allowNull : false ,
     },
-    sessionID : {
-        type : DataTypes.INTEGER,
-        allowNull : false ,
-    },
+    // sessionID : {
+    //     type : DataTypes.INTEGER,
+    //     allowNull : false ,
+    // },
 
     
     created_at : {

@@ -1,8 +1,21 @@
 import React from 'react';
-
+import ProductCard from "../../../component/common/product card/ProductCard"
 function Wishlist() {
   return <div>
-      <h1>Wishlist</h1>
+      <div className="profile__card">
+        <h3 className="profile__card-title">My profile</h3>
+        <div className="profile__devider"></div>
+        <div className="wishlist__main">
+            <ProductCard/>
+            <ProductCard/>
+            <ProductCard/>
+            <ProductCard/>
+            <ProductCard/>
+            <ProductCard/>
+            <ProductCard/>
+            <ProductCard/>
+        </div>
+    </div>
   </div>;
 }
 

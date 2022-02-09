@@ -18,7 +18,6 @@ class AccountController {
         console.log(token);
         
         if(token) next();
-        
         else{
             const data = req.user.dataValues
             const token = encodeToken(data.id);
@@ -28,7 +27,7 @@ class AccountController {
     }
     async loginWithToken(req, res,next) {
 
-        res.json({msg: "success second", token : req.header("Authorization")});
+        res.json({msg: "success second",user : req.user});
     }
 
     async register (req , res) {
@@ -45,8 +44,6 @@ class AccountController {
             res.setHeader("Authorization", token);
             res.json({"user" : account});
         }
-       
-        
     }
     async secret (req , res,next) {
         console.log("secret controller");

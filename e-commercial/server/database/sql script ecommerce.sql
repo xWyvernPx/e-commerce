@@ -1,8 +1,8 @@
--- create database ecommerce ;
--- go 
+create database ecommerce ;
+go 
 
--- use ecommerce;
--- go
+use ecommerce;
+go
 
 create table account (
 id int identity primary key NOT NULL,

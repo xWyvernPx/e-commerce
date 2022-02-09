@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { getData } from '../../../feature/Landing/landingSlice';
 // import {category} from "../../../mockup/category";
 import InlineCart from '../InlineCart/InlineCart';
@@ -50,7 +51,7 @@ function HeaderMiddle() {
                 <img src="https://ik.imagekit.io/flamefoxeswyvernp/Project/UI_challenge/e-commecial/ic-actions-search_31-UBomEM.png?updatedAt=1639053399269" className="header__ic-search" alt=" " />
             </div>
             <div className="header__personal">
-                <a href="#!" className="header__account"><img src="https://ik.imagekit.io/flamefoxeswyvernp/Project/UI_challenge/e-commecial/ic-actions-user_z25xdW8DD.svg?updatedAt=1639053392893" alt="" /></a>
+                <Link to="/login" className="header__account"><img src="https://ik.imagekit.io/flamefoxeswyvernp/Project/UI_challenge/e-commecial/ic-actions-user_z25xdW8DD.svg?updatedAt=1639053392893" alt="" /></Link>
                 <button className="header__cart" onClick={cartClickHandle}><img src="https://ik.imagekit.io/flamefoxeswyvernp/Project/UI_challenge/e-commecial/ic-ecommerce-basket_-nk-fAHgL.svg?updatedAt=1639053395004" alt="" />
                     {/* global   */}
                     <p className="header__number-items">99</p> 

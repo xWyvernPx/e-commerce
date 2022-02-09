@@ -7,6 +7,7 @@ import { sortProductMiddleware } from "../middleware/product-sorting.middleware.
 import AccountRoute from "./account.route.js"
 import OrdersRoute from "./orders.route.js"
 import WishlistRoute from "./wishlist.route.js"
+import CartRoute from "./cart.route.js"
 
 export const Route = (app) => {
     app.use("/product",ProductRoute);
@@ -17,6 +18,7 @@ export const Route = (app) => {
     app.use("/account",AccountRoute);
     app.use("/orders",OrdersRoute);
     app.use("/wishlist", WishlistRoute);
+    app.use("/cart", CartRoute);
     app.get("/",(req,res)=>{
         res.send("haha")
         })
