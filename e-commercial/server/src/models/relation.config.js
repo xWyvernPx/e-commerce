@@ -20,8 +20,8 @@ import Subcategory from "./subcategory.model.js";
 import Wishlist from "./wishlist.model.js";
 Account.hasOne(ShoppingSession)
 ShoppingSession.belongsTo(Account,{foreignKeyConstraint : "FK_ShoppingsessionAccount"});
-ShoppingSession.hasMany(CartItem);
-CartItem.belongsTo(ShoppingSession,{foreignKeyConstraint : "FK_CartSession"});
+// ShoppingSession.hasMany(CartItem);
+// CartItem.belongsTo(ShoppingSession,{foreignKeyConstraint : "FK_CartSession",foreignKey : "sessionId"});
 CartItem.belongsTo(Product,{foreignKeyConstraint : "FK_CartProduct"})
 Product.hasOne(CartItem)
 // CartItem.hasOne(Product,{foreignKeyConstraint : "FK_CartProduct"});

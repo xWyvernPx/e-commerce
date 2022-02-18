@@ -3,12 +3,15 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import "./cart.scss"
 import CartProduct from './CartProduct';
+import CartAPI from '../../../api/cartAPI'
 function InlineCart(props) {
     const {active, onClose} = props;
     const user = useSelector(state => state.rootReducer.loginReducer.loginInfo);
     
     useEffect(() => {
-        console.log(user);
+        if(user.id) {
+            const cart = await CartAPI
+        }
     }, [user]);
     
     return (

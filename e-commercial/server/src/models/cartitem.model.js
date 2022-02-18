@@ -1,5 +1,6 @@
 import {Sequelize,Model,DataTypes} from "sequelize";
 import { config } from "../../database/dbconfig.js";
+import ShoppingSession from "./shopping_session.model.js";
 const sequelize = new Sequelize(config);
   class CartItem extends Model {}
   CartItem.init({
@@ -21,6 +22,8 @@ const sequelize = new Sequelize(config);
     // sessionID : {
     //     type : DataTypes.INTEGER,
     //     allowNull : false ,
+    //     references : ShoppingSession,
+
     // },
 
     
