@@ -5,13 +5,19 @@ import "./cart.scss"
 import CartProduct from './CartProduct';
 import CartAPI from '../../../api/cartAPI'
 function InlineCart(props) {
-    const {active, onClose} = props;
+    const {active, onClose,amountSet} = props;
     const user = useSelector(state => state.rootReducer.loginReducer.loginInfo);
+    const [cart, setCart] = useState([]);
     
     useEffect(() => {
-        if(user.id) {
-            const cart = await CartAPI
-        }
+        const fetchProduct = async () => {
+            if(user.id) {
+                    const cart = await CartAPI.getCartByAccount(user.id);
+                    console.log(cart)
+                    setCart(cart);
+                    amountSet(cart.length);
+            }}
+        fetchProduct();
     }, [user]);
     
     return (
@@ -21,10 +27,12 @@ function InlineCart(props) {
                     <img src="https://ik.imagekit.io/flamefoxeswyvernp/Project/UI_challenge/e-commecial/ic-actions-close-simple_R1SCIuwbt.svg?updatedAt=1639053398420" alt="" className="checkout__close" onClick={onClose} />
                 </div>
                 <div className="checkout__list">
+                    {cart && cart.map(item => <CartProduct key={item.id} item={item} />)}
+                    {/* <CartProduct></CartProduct>
                     <CartProduct></CartProduct>
                     <CartProduct></CartProduct>
-                    <CartProduct></CartProduct>
-                    <CartProduct></CartProduct>
+                    <CartProduct></CartProduct> */}
+                  
                 </div>
                 <div className="checkout__total">
                     <h6 className="checkout__total-title">Subtotal</h6>

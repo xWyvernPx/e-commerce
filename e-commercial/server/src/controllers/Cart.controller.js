@@ -9,13 +9,14 @@ class CartController {
     async deleteCartItem(req,res) {
         const cartId = req.params.cartId;
         const rs = await CartService.deleteCartItem(cartId);
-        res.json(rs);
+        res.json(...rs);
     }
     async updateCartItem(req,res) {
-        const newData = res.body.payload;
+        const newData = req.body.payload;
+        // console.log(req.body.payload);
         const cartID = req.params.cartId;
-        const rs = await CartService.updateCartItem(newData,cartID);
-        res.json(rs);
+        const rs = await CartService.updateCartItem(cartID,newData);
+        res.json(...rs);
     }
 }
 export default new CartController();

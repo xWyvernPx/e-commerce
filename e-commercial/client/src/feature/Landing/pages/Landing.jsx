@@ -15,7 +15,7 @@ function Landing() {
             <Feature></Feature>
             <BestSelling></BestSelling>
             <BestProduct2></BestProduct2>
-            <Customer2/>
+            {/* <Customer2/> */}
             <Headline2/>
             <Blog2/>
         </div>

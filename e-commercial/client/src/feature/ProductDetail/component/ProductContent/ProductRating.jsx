@@ -27,7 +27,7 @@ function ProductRating(props) {
                 <input className="rating__input" name="rating2" id="rating2-25" defaultValue="2.5"  type="radio" />
                 <label aria-label="3 stars" className="rating__label" htmlFor="rating2-30"><i className="rating__icon rating__icon--star fa fa-star" /></label>
                 <input className="rating__input" name="rating2" id="rating2-30" defaultValue={3} type="radio" />
-                <label aria-label="3.5 stars" className="rating__label rating__label--half" htmlFor="rating2-35"><i className="rating__icon rating__icon--star fa fa-star-half" /></label>
+                <label aria-label="3.5 stars" className="rating__label rating__label--half" htmlFor="rating2-35"><i className="rating__icon rating__icon--star fa fa-star-half-o" /></label>
                 <input className="rating__input" name="rating2" id="rating2-35" defaultValue="3.5"  type="radio" />
                 <label aria-label="4 stars" className="rating__label" htmlFor="rating2-40"><i className="rating__icon rating__icon--star fa fa-star" /></label>
                 <input className="rating__input" name="rating2" id="rating2-40" defaultValue={4} type="radio" />
