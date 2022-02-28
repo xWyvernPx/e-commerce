@@ -49,7 +49,7 @@ export function calcDay(date) {
     
 }
 export function calcNewPrice (price, discount_percent){
-    return (price * (discount_percent /100)).toFixed(2);
+    return (price * (100/discount_percent )).toFixed(2);
 }
 
 export default ProductCardList

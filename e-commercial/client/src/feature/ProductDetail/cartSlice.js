@@ -1,14 +1,26 @@
 import { createSlice } from "@reduxjs/toolkit"
 
+
+const cartState = {
+    loading : "LOADING_CART",
+    loadingSuccess : "LOADING_CART_SUCCESS",
+    loadingError : "LOADING_CART_ERROR",
+    addToCart : "ADD_TO_CART",
+    addToCartSuccess : "ADD_TO_CART_SUCCESS",
+    addToCartError : "ADD_TO_CART_ERROR",
+}
 const initialState = {
     cart : [],
     total : 0,
+    state : ""
 }
 export const cartSlider = createSlice({
 name : "cart",
 initialState,
 reducers : {
-    loadCart: ()=> {},
+    loadCart: (state,payload) => {
+        state.state = cartState.loading; 
+    },
     
     addToCart : (state,action) =>{
        const dupliCheck = state.cart.find(item => item.product.productID === action.payload.productId);
