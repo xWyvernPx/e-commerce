@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from "@reduxjs/toolkit";
 
 
 const cartState = {
@@ -10,6 +10,7 @@ const cartState = {
     addToCartError : "ADD_TO_CART_ERROR",
 }
 const initialState = {
+<<<<<<< HEAD
     cart : [],
     total : 0,
     state : ""
@@ -30,16 +31,56 @@ reducers : {
        else {
               state.cart.push(action.payload);
        }
+
+
     },
-    removeFromCart : (state,action) =>{
-        state.cart.splice(action.payload,1);
-        state.total -= state.cart[action.payload].price;
+    loadCartSuccess: (state, action) => {
+      state.cart = action.payload;
+      state.total = action.payload.length;
+      state.state = "SUCCESSFUL";
     },
-    clearCart : (state) =>{
-        state.cart = [];
-        state.total = 0;
-    }
-}
-})
-export const { addToCart,removeFromCart,clearCart } = cartSlider.actions
+    loadCartFailure: (state, action) => {
+      state.state = "FAIL";
+    },
+    updateCart: (state, action) => {
+      state.state = "UPDATING";
+    },
+    updateCartSuccess: (state, action) => {
+      state.state = "UPDATE SUCCESSFUL";
+    },
+    updateCartFailure: (state, action) => {
+      state.state = "UPDATE FAIL";
+    },
+    addToCart: (state, action) => {
+      const dupliCheck = state.cart.find(
+        (item) => item.product.productID === action.payload.productId
+      );
+      if (dupliCheck) {
+        dupliCheck.quantity += action.payload.quantity;
+      } else {
+        state.cart.push(action.payload);
+      }
+    },
+    removeFromCart: (state, action) => {
+      state.cart.splice(action.payload, 1);
+      state.total -= state.cart[action.payload].price;
+    },
+    clearCart: (state) => {
+      state.cart = [];
+      state.total = 0;
+    },
+  },
+});
+export const getCart = (state) => state.rootReducer.cartReducer.cart;
+export const {
+  addToCart,
+  removeFromCart,
+  clearCart,
+  loadCart,
+  loadCartSuccess,
+  loadCartFailure,
+  updateCart,
+  updateCartFailure,
+  updateCartSuccess,
+} = cartSlider.actions;
 export default cartSlider.reducer;

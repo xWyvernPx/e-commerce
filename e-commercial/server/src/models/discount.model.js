@@ -1,52 +1,54 @@
-import {Sequelize,Model,DataTypes} from "sequelize";
+import { Sequelize, Model, DataTypes } from "sequelize";
 import { config } from "../../database/dbconfig.js";
 const sequelize = new Sequelize(config);
-  class Discount extends Model {}
-  Discount.init({
+class Discount extends Model {}
+Discount.init(
+  {
     // Model attributes are defined here
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey:true,
-      field: "iD"
+      primaryKey: true,
+      field: "iD",
     },
     name: {
       type: DataTypes.STRING(50),
-      allowNull: false
+      allowNull: false,
       // allowNull defaults to true
     },
-    describe : {
-        type : DataTypes.TEXT,
-        allowNull:false
+    describe: {
+      type: DataTypes.TEXT,
+      allowNull: false,
     },
-    discount_percent : {
-        type : DataTypes.INTEGER,
-        allowNull:false,
+    discount_percent: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
-    active : {
-        type : DataTypes.BOOLEAN,
-        allowNull : false ,
+    active: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
     },
 
-    
-    created_at : {
-        type : DataTypes.DATE,
+    created_at: {
+      type: DataTypes.DATE,
     },
-    modefied_at : {
-        type: DataTypes.DATE,
-        allowNull:false,
+    modified_at: {
+      type: DataTypes.DATE,
+      allowNull: false,
     },
-    deleted_at : {
-        type: DataTypes.DATE,
+    deleted_at: {
+      type: DataTypes.DATE,
     },
-  }, {
+  },
+  {
     // Other model options go here
     sequelize, // We need to pass the connection instance
-    modelName: 'Discount', // We need to choose the model name
+    modelName: "Discount", // We need to choose the model name
     tableName: "discount",
-    timestamps:false,
-    createdAt:false,
-    updatedAt:false
-  });
- 
+    timestamps: false,
+    createdAt: false,
+    updatedAt: false,
+  }
+);
+
 export default Discount;
