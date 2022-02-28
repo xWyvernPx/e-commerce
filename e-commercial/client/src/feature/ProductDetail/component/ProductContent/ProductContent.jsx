@@ -1,22 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ProductInfo from './ProductInfo'
 import "./productcontent.scss"
 import ProductPayment from './ProductPayment'
 import ProductRating from './ProductRating'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { getCart } from '../../cartSlice'
 function ProductContent(props) {
     const {data} = props;
-    const cart = useSelector(state => state.rootReducer.cartReducer.cart);
-    console.log("cart in product content", cart)
-    const addToCart = () => {
-        const dupliCheck = state.cart.find(item => item.product.productID === action.payload.productId);
+    const cart = useSelector(getCart);
+    const [amount, setAmount] = useState(0);
+    const dispatch = useDispatch();
+    const addToCart = (amount) => {
+        const dupliCheck = cart.find(item => item.product.productID === data.id);
        if(dupliCheck){
-          // TODO : dispatch add to cart
-
+            dispatch()            
        }
-       else {
-             //TODO:  dispatch update product
-       }
+    //    else {
+    //          //TODO:  dispatch update product
+    //    }
+    }
+    const amountSet = (e)=>{
+        setAmount(e.target.value);
     }
     return (
         data && <div className='detail__content'>

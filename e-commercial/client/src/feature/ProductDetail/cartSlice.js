@@ -1,33 +1,64 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    cart : [],
-    total : 0,
-}
+  cart: [],
+  total: 0,
+  state: "",
+};
 export const cartSlider = createSlice({
-name : "cart",
-initialState,
-reducers : {
-    loadCart: ()=> {},
-    
-    addToCart : (state,action) =>{
-       const dupliCheck = state.cart.find(item => item.product.productID === action.payload.productId);
-       if(dupliCheck){
-           dupliCheck.quantity += action.payload.quantity;
-       }
-       else {
-              state.cart.push(action.payload);
-       }
+  name: "cart",
+  initialState,
+  reducers: {
+    loadCart: (state, action) => {
+      state.state = "LOADING";
     },
-    removeFromCart : (state,action) =>{
-        state.cart.splice(action.payload,1);
-        state.total -= state.cart[action.payload].price;
+    loadCartSuccess: (state, action) => {
+      state.cart = action.payload;
+      state.total = action.payload.length;
+      state.state = "SUCCESSFUL";
     },
-    clearCart : (state) =>{
-        state.cart = [];
-        state.total = 0;
-    }
-}
-})
-export const { addToCart,removeFromCart,clearCart } = cartSlider.actions
+    loadCartFailure: (state, action) => {
+      state.state = "FAIL";
+    },
+    updateCart: (state, action) => {
+      state.state = "UPDATING";
+    },
+    updateCartSuccess: (state, action) => {
+      state.state = "UPDATE SUCCESSFUL";
+    },
+    updateCartFailure: (state, action) => {
+      state.state = "UPDATE FAIL";
+    },
+    addToCart: (state, action) => {
+      const dupliCheck = state.cart.find(
+        (item) => item.product.productID === action.payload.productId
+      );
+      if (dupliCheck) {
+        dupliCheck.quantity += action.payload.quantity;
+      } else {
+        state.cart.push(action.payload);
+      }
+    },
+    removeFromCart: (state, action) => {
+      state.cart.splice(action.payload, 1);
+      state.total -= state.cart[action.payload].price;
+    },
+    clearCart: (state) => {
+      state.cart = [];
+      state.total = 0;
+    },
+  },
+});
+export const getCart = (state) => state.rootReducer.cartReducer.cart;
+export const {
+  addToCart,
+  removeFromCart,
+  clearCart,
+  loadCart,
+  loadCartSuccess,
+  loadCartFailure,
+  updateCart,
+  updateCartFailure,
+  updateCartSuccess,
+} = cartSlider.actions;
 export default cartSlider.reducer;

@@ -1,7 +1,9 @@
-import React,{useState} from 'react'
-import { useSelector } from 'react-redux';
+import React,{useEffect, useState} from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getData } from '../../../feature/Landing/landingSlice';
+import { getUser } from '../../../feature/Login/loginSlice';
+import { loadCart } from '../../../feature/ProductDetail/cartSlice';
 // import {category} from "../../../mockup/category";
 import InlineCart from '../InlineCart/InlineCart';
 import PrivateLink from '../PrivateLink/PrivateLink';
@@ -12,9 +14,17 @@ function HeaderMiddle() {
     const [searchCategory, setSearchCategory] = useState("");
     const [amountCart, setAmountCart] = useState(0);
     const data= useSelector(getData).data;
+    const user = useSelector(getUser);
+    const dispatch = useDispatch();
+    useEffect(() => {
+      if(user.id) dispatch(loadCart(user.id))
+    }, [user])
+    
 
     // const [category, setCategory] = useState();
-   
+    const cartFetchSaga = ()=> {
+        
+    }
     const categoryClickHandle = (e)=> {
         // document.querySelector(".header__category-select--list").classList.toggle("active");
         // document.querySelector(".header__category-select--icon").classList.toggle("spin");
@@ -55,7 +65,7 @@ function HeaderMiddle() {
             </div>
             <div className="header__personal">
                 <PrivateLink to="/account/profile" className="header__account"><img src="https://ik.imagekit.io/flamefoxeswyvernp/Project/UI_challenge/e-commecial/ic-actions-user_z25xdW8DD.svg?updatedAt=1639053392893" alt="" /></PrivateLink>
-                <button className="header__cart" onClick={cartClickHandle}><img src="https://ik.imagekit.io/flamefoxeswyvernp/Project/UI_challenge/e-commecial/ic-ecommerce-basket_-nk-fAHgL.svg?updatedAt=1639053395004" alt="" />
+                <button className="header__cart" onLoad={cartFetchSaga} onClick={cartClickHandle}><img src="https://ik.imagekit.io/flamefoxeswyvernp/Project/UI_challenge/e-commecial/ic-ecommerce-basket_-nk-fAHgL.svg?updatedAt=1639053395004" alt="" />
                     {/* global   */}
                     <p className="header__number-items">{amountCart}</p> 
                 </button>
