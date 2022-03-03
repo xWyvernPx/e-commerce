@@ -10,11 +10,11 @@ const cartState = {
     addToCartError : "ADD_TO_CART_ERROR",
 }
 const initialState = {
-<<<<<<< HEAD
     cart : [],
     total : 0,
     state : ""
 }
+
 export const cartSlider = createSlice({
 name : "cart",
 initialState,
