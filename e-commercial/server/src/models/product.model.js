@@ -1,26 +1,25 @@
-import { Sequelize, Model, DataTypes } from "sequelize";
+import {Sequelize,Model,DataTypes} from "sequelize";
 import { config } from "../../database/dbconfig.js";
 import Category from "./category.model.js";
 import Subcategory from "./subcategory.model.js";
 const sequelize = new Sequelize(config);
-class Product extends Model {}
-Product.init(
-  {
+  class Product extends Model {}
+  Product.init({
     // Model attributes are defined here
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      field: "iD",
+      primaryKey:true,
+      field : "iD"
     },
     name: {
       type: DataTypes.STRING(50),
-      allowNull: false,
+      allowNull: false
       // allowNull defaults to true
     },
-    describe: {
-      type: DataTypes.TEXT,
-      allowNull: false,
+    describe : {
+        type : DataTypes.TEXT,
+        allowNull:false
     },
     // categoryID : {
     //     type : DataTypes.INTEGER,
@@ -28,62 +27,60 @@ Product.init(
     //     references : { model : Category , key : "id"},
 
     // },
-    instock: {
-      type: DataTypes.INTEGER,
+    instock : {
+      type : DataTypes.INTEGER,
     },
-    brand: {
-      type: DataTypes.STRING,
+    brand : {
+      type : DataTypes.STRING,
     },
-    from_province: {
-      type: DataTypes.INTEGER,
+    from_province : {
+      type : DataTypes.INTEGER,
     },
-    from_district: {
-      type: DataTypes.INTEGER,
+    from_district : {
+      type : DataTypes.INTEGER
     },
-    SKU: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
+    SKU : {
+        type :DataTypes.INTEGER,
+        allowNull:false
     },
-    price: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
+    price :{
+        type :DataTypes.INTEGER,
+        allowNull :false
     },
-    // discountID : {
-    //     type: DataTypes.INTEGER
+    // discountID : { 
+    //     type: DataTypes.INTEGER   
     // },  // bug multiple column called
-    viewCount: {
-      type: DataTypes.INTEGER,
+    viewCount : {
+        type : DataTypes.INTEGER,
     },
-    buyCount: {
-      type: DataTypes.INTEGER,
+    buyCount :{
+        type :DataTypes.INTEGER,
     },
-    Rating: {
-      type: DataTypes.FLOAT,
+    Rating :{ 
+        type : DataTypes.FLOAT,
     },
     // subcategoryID : {
     //     type :DataTypes.INTEGER,
     //     allowNull:false,
     //     references : { model : Subcategory , key : "id"},
     // },
-    created_at: {
-      type: DataTypes.DATE,
+    created_at : {
+        type : DataTypes.DATE,
     },
-    modified_at: {
-      type: DataTypes.DATE,
-      allowNull: false,
+    modefied_at : {
+        type: DataTypes.DATE,
+        allowNull:false,
     },
-    deleted_at: {
-      type: DataTypes.DATE,
+    deleted_at : {
+        type: DataTypes.DATE,
     },
-  },
-  {
+  }, {
     // Other model options go here
     sequelize, // We need to pass the connection instance
-    modelName: "Product", // We need to choose the model name
+    modelName: 'Product', // We need to choose the model name
     tableName: "product",
-    timestamps: false,
-    createdAt: false,
-    updatedAt: false,
-  }
-);
+    timestamps:false,
+    createdAt:false,
+    updatedAt:false
+  });
 export default Product;

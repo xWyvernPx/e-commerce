@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 function SubcatalogueList(props) {
     const nav = useNavigate();
     const {list,main,active} = props;
+    // console.log(list);
     const NavHandle = (slug)=> {
         nav(`/${main}/${slug}`)
     }

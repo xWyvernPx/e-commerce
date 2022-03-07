@@ -1,45 +1,43 @@
-import { Sequelize, Model, DataTypes } from "sequelize";
+import {Sequelize,Model,DataTypes} from "sequelize";
 import { config } from "../../database/dbconfig.js";
 import Account from "./account.model.js";
 const sequelize = new Sequelize(config);
-class Feedback extends Model {}
-Feedback.init(
-  {
+  class Feedback extends Model {}
+  Feedback.init({
     // Model attributes are defined here
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
+      primaryKey:true
     },
     content: {
       type: DataTypes.TEXT,
-      allowNull: false,
+      allowNull: false
       // allowNull defaults to true
     },
-    accountID: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
+    accountID : {
+        type : DataTypes.INTEGER,
+        allowNull : false ,
     },
 
-    created_at: {
-      type: DataTypes.DATE,
+    
+    created_at : {
+        type : DataTypes.DATE,
     },
-    modified_at: {
-      type: DataTypes.DATE,
-      allowNull: false,
+    modefied_at : {
+        type: DataTypes.DATE,
+        allowNull:false,
     },
-    deleted_at: {
-      type: DataTypes.DATE,
+    deleted_at : {
+        type: DataTypes.DATE,
     },
-  },
-  {
+  }, {
     // Other model options go here
     sequelize, // We need to pass the connection instance
-    modelName: "Feedback", // We need to choose the model name
+    modelName: 'Feedback', // We need to choose the model name
     tableName: "feedback",
-    timestamps: false,
-    createdAt: false,
-    updatedAt: false,
-  }
-);
+    timestamps:false,
+    createdAt:false,
+    updatedAt:false
+  });
 export default Feedback;

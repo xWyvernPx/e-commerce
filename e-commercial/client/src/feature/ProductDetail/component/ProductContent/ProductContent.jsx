@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import ProductInfo from './ProductInfo'
 import "./productcontent.scss"
 import ProductPayment from './ProductPayment'
 import ProductRating from './ProductRating'
-import { useDispatch, useSelector } from 'react-redux'
-import { getCart } from '../../cartSlice'
+import { useSelector } from 'react-redux'
 function ProductContent(props) {
     const {data} = props;
+<<<<<<< HEAD
 <<<<<<< HEAD
     const cart = useSelector(state => state.rootReducer.cartReducer.cart);
     console.log("cart in product content", cart)
@@ -29,13 +29,19 @@ function ProductContent(props) {
        if(dupliCheck){
             dispatch()            
 >>>>>>> 4b28cbaf5af96a8207d5cb454c615a55f62a6e8a
+=======
+    const cart = useSelector(state => state.rootReducer.cartReducer.cart);
+    console.log("cart in product content", cart)
+    const addToCart = () => {
+        const dupliCheck = state.cart.find(item => item.product.productID === action.payload.productId);
+       if(dupliCheck){
+          // TODO : dispatch add to cart
+
        }
-    //    else {
-    //          //TODO:  dispatch update product
-    //    }
-    }
-    const amountSet = (e)=>{
-        setAmount(e.target.value);
+       else {
+             //TODO:  dispatch update product
+>>>>>>> parent of 4b28cba (lap 28/2)
+       }
     }
     return (
         data && <div className='detail__content'>

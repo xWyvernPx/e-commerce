@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit"
 
 
 const cartState = {
@@ -12,16 +12,24 @@ const cartState = {
 const initialState = {
     cart : [],
     total : 0,
+<<<<<<< HEAD
     state : ""
 }
 
+=======
+}
+>>>>>>> parent of 4b28cba (lap 28/2)
 export const cartSlider = createSlice({
 name : "cart",
 initialState,
 reducers : {
+<<<<<<< HEAD
     loadCart: (state,payload) => {
         state.state = cartState.loading; 
     },
+=======
+    loadCart: ()=> {},
+>>>>>>> parent of 4b28cba (lap 28/2)
     
     addToCart : (state,action) =>{
        const dupliCheck = state.cart.find(item => item.product.productID === action.payload.productId);
@@ -31,6 +39,7 @@ reducers : {
        else {
               state.cart.push(action.payload);
        }
+<<<<<<< HEAD
 
 
     },
@@ -84,3 +93,18 @@ export const {
   updateCartSuccess,
 } = cartSlider.actions;
 export default cartSlider.reducer;
+=======
+    },
+    removeFromCart : (state,action) =>{
+        state.cart.splice(action.payload,1);
+        state.total -= state.cart[action.payload].price;
+    },
+    clearCart : (state) =>{
+        state.cart = [];
+        state.total = 0;
+    }
+}
+})
+export const { addToCart,removeFromCart,clearCart } = cartSlider.actions
+export default cartSlider.reducer;
+>>>>>>> parent of 4b28cba (lap 28/2)
